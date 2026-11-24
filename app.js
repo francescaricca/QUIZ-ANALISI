@@ -59,8 +59,8 @@ const CHAPTERS = [
 
 const $ = id => document.getElementById(id);
 
-const KEY = 'am1_v3_bank';
-const PK = 'am1_v3_progress';
+const KEY = 'quiz_analisi_bank_v1';
+const STATE_KEY = 'quiz_analisi_progress_v1';
 
 function load(key, fallback) {
   try {
@@ -73,7 +73,16 @@ function load(key, fallback) {
 }
 
 let bank = load(KEY, []);
-let progress = load(PK, {});
+function emptyState() {
+  return {progress: {}, errorNotes: {}, errorHistory: {},
+    stats: {sessions: [], attempts: []}, activeSession: null};
+}
+
+const storedState = load(STATE_KEY, null);
+let state = validState(storedState) ? storedState : emptyState();
+let {progress, errorNotes, errorHistory, stats, activeSession} = state;
+let savedState = JSON.stringify(state);
+let hasSavedState = storedState !== null;
 
 let pending = [];
 let queue = [];
@@ -83,54 +92,36 @@ let graded = false;
 let sessionName = '';
 let sessionStates = [];
 
-const errorNotes = load('am1_error_notes', {});
-const errorHistory = load('am1_error_history', {});
-
 // ============================================================
 // SALVATAGGIO
 // ============================================================
 
-function save() {
+function setState(next) {
+  state = next;
+  ({progress, errorNotes, errorHistory, stats, activeSession} = state);
+}
+
+function saveState() {
   try {
-    localStorage.setItem(KEY, JSON.stringify(bank));
-    localStorage.setItem(PK, JSON.stringify(progress));
-    return true;
-  } catch (error) {
-    console.error('Impossibile salvare:', error);
-
-    const status = $('status');
-
-    if (status) {
-      status.textContent =
-        'Attenzione: memoria del browser piena o non disponibile. ' +
-        'Esporta un backup dei quiz.';
+    const current = localStorage.getItem(STATE_KEY);
+    if (current !== (hasSavedState ? savedState : null)) {
+      throw new Error('Ricarica la pagina per aggiornare i progressi salvati.');
     }
-
-    return false;
-  }
-}
-
-function saveErrors() {
-  try {
-    localStorage.setItem(
-      'am1_error_notes',
-      JSON.stringify(errorNotes)
-    );
-
-    localStorage.setItem(
-      'am1_error_history',
-      JSON.stringify(errorHistory)
-    );
-
+    const snapshot = JSON.stringify({...state, activeSession});
+    localStorage.setItem(STATE_KEY, snapshot);
+    savedState = snapshot;
+    hasSavedState = true;
     return true;
   } catch (error) {
-    console.error('Errore salvataggio errori:', error);
+    setState(JSON.parse(savedState));
+    console.error('Impossibile salvare i progressi:', error);
+    alert('Progressi non salvati. ' + error.message);
     return false;
   }
 }
 
-function day(n = 0) {
-  const d = new Date();
+function day(n = 0, from = new Date()) {
+  const d = new Date(from);
 
   d.setHours(12, 0, 0, 0);
   d.setDate(d.getDate() + n);
@@ -143,8 +134,8 @@ function day(n = 0) {
 }
 
 function due(q) {
-  return progress[q.id]?.attempts > 0 &&
-         progress[q.id]?.due <= day();
+  return isUnresolved(q) || (progress[quizKey(q)]?.attempts > 0 &&
+         progress[quizKey(q)]?.due <= day());
 }
 
 // ============================================================
@@ -552,12 +543,9 @@ function importBank(items) {
     imported++;
   }
 
-  // Mantiene i quiz precedenti.
+  localStorage.setItem(KEY, JSON.stringify([...map.values()]));
   bank = [...map.values()];
-
   refreshUniqueBank();
-  save();
-  saveErrors();
   render();
 
   return imported;
@@ -566,14 +554,7 @@ function importBank(items) {
 // ============================================================
 // VISTA UNICA E STATISTICHE (archivio originale intatto)
 // ============================================================
-const STATS_KEY = 'am1_stats_v1';
-let stats = load(STATS_KEY, {sessions: [], attempts: []});
-if (!Array.isArray(stats.sessions)) stats.sessions = [];
-if (!Array.isArray(stats.attempts)) stats.attempts = [];
-let activeSession = null;
-let canonicalById = new Map();
 let uniqueQuizBank = [];
-let duplicateWarnings = 0;
 
 function normalizedText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -582,143 +563,123 @@ function answerText(q) {
   return Number.isInteger(q.correct) && q.correct >= 0 && q.correct < q.options.length
     ? normalizedText(q.options[q.correct]) : null;
 }
+function quizKey(q) {
+  return JSON.stringify([q.section, normalizedText(q.question),
+    q.options.map(normalizedText).sort(), answerText(q)]);
+}
 function refreshUniqueBank() {
   const groups = new Map();
-  canonicalById = new Map();
-  uniqueQuizBank = [];
-  duplicateWarnings = 0;
-  for (const q of bank) {
-    // Le alternative possono avere un ordine differente; il testo della soluzione deve coincidere.
-    const key = JSON.stringify([q.section, normalizedText(q.question),
-      q.options.map(normalizedText).sort()]);
-    const previous = groups.get(key);
-    if (previous && answerText(previous) === answerText(q)) {
-      canonicalById.set(q.id, previous.id);
-    } else if (previous) {
-      // Non nascondere quiz con chiavi discordanti.
-      duplicateWarnings++;
-      canonicalById.set(q.id, q.id);
-      uniqueQuizBank.push(q);
-    } else {
-      groups.set(key, q);
-      canonicalById.set(q.id, q.id);
-      uniqueQuizBank.push(q);
-    }
+  for (const quiz of bank) {
+    const key = quizKey(quiz);
+    if (!groups.has(key)) groups.set(key, quiz);
   }
-  // Migrazione non distruttiva: non cancelliamo i vecchi record dei duplicati.
-  // La vista usa il progresso aggregato, scegliendo il massimo storico noto.
-  for (const q of bank) {
-    const canonical = canonicalById.get(q.id);
-    if (canonical === q.id || !progress[q.id]) continue;
-    const old = progress[q.id];
-    const current = progress[canonical] || {};
-    progress[canonical] = {
-      ...current,
-      attempts: Math.max(current.attempts || 0, old.attempts || 0),
-      correct: Math.max(current.correct || 0, old.correct || 0),
-      hard: !!(current.hard || old.hard),
-      streak: Math.max(current.streak || 0, old.streak || 0)
-    };
-    const e = errorHistory[q.id];
-    if (e) {
-      const c = errorHistory[canonical] || {};
-      errorHistory[canonical] = {
-        ...c, wrong: Math.max(c.wrong || 0, e.wrong || 0),
-        lastWrong: [c.lastWrong || '', e.lastWrong || ''].sort().pop(),
-        recoveryDays: c.recoveryDays || e.recoveryDays || [],
-        recovered: !!(c.recovered && e.recovered)
-      };
-    }
-    if (!errorNotes[canonical] && errorNotes[q.id]) errorNotes[canonical] = errorNotes[q.id];
-  }
+  uniqueQuizBank = [...groups.values()];
 }
 function visibleBank() { return uniqueQuizBank; }
 function isUnresolved(q) {
-  const h = errorHistory[q.id];
-  return !!(h && h.wrong > 0 && !h.recovered);
+  const h = errorHistory[quizKey(q)];
+  return !!(h && (h.wrong > 0 || h.marked) && !h.recovered);
 }
-function recordResult(q, outcome) {
-  const today = day();
-  const h = errorHistory[q.id] || {wrong: 0, recoveryDays: [], recovered: false};
+function applyAnswer(quiz, outcome, at = new Date().toISOString()) {
+  const key = quizKey(quiz);
+  const p = progress[key] || {attempts: 0, streak: 0, hard: false};
+  const correct = outcome === 'correct';
+  p.attempts++;
+  p.streak = correct ? p.streak + 1 : 0;
+  p.due = day(correct && !p.hard ? [1, 3, 7, 14, 30][Math.min(p.streak - 1, 4)] : 1, at);
+  progress[key] = p;
+  recordResult(quiz, outcome, day(0, at), at);
+}
+
+function recordResult(q, outcome, today = day(), at = new Date().toISOString()) {
+  const h = errorHistory[quizKey(q)] || {wrong: 0, recoveryDays: [], recovered: false};
   if (outcome === 'wrong' || outcome === 'unsure') {
     if (outcome === 'wrong') h.wrong = (h.wrong || 0) + 1;
-    else h.wrong = Math.max(1, h.wrong || 0);
+    else h.marked = true;
     h.lastWrong = today;
     h.recoveryDays = [];
     h.recovered = false;
-  } else if (outcome === 'correct' && h.wrong && !h.recovered) {
+  } else if (outcome === 'correct' && (h.wrong || h.marked) && !h.recovered) {
     if (!Array.isArray(h.recoveryDays)) h.recoveryDays = [];
     if (today > (h.lastWrong || '') && !h.recoveryDays.includes(today)) {
       h.recoveryDays.push(today);
       if (h.recoveryDays.length >= 2) h.recovered = true;
     }
   }
-  errorHistory[q.id] = h;
-  if (activeSession) {
-    activeSession.results.push({id:q.id, section:q.section, outcome, at:new Date().toISOString()});
-  }
-  stats.attempts.push({id:q.id, section:q.section, outcome, at:new Date().toISOString()});
-  localStorage.setItem(STATS_KEY, JSON.stringify(stats));
-  saveErrors();
+  errorHistory[quizKey(q)] = h;
+  if (outcome === 'unsure') return;
+  const result = {key: quizKey(q), section: q.section, outcome, at};
+  stats.attempts.push(result);
+  if (activeSession) activeSession.results.push(result);
 }
-function finishSession(showSummary = true) {
-  if (!activeSession) return;
-  const results = activeSession.results;
-  const good = results.filter(r => r.outcome === 'correct').length;
-  const bad = results.filter(r => r.outcome === 'wrong').length;
-  const total = good + bad;
-  const summary = {...activeSession, ended:new Date().toISOString(), correct:good, wrong:bad,
-    percentage:total ? Math.round(1000 * good / total) / 10 : null};
+function finishSession(showSummary = true, interrupted = false) {
+  if (!activeSession) return true;
+  if (!activeSession.results.length) {
+    activeSession = null;
+    return true;
+  }
+  const summary = summarizeSession(activeSession, new Date().toISOString(), interrupted);
+  const {results, correct: good, wrong: bad} = summary;
   stats.sessions.push(summary);
-  localStorage.setItem(STATS_KEY, JSON.stringify(stats));
   activeSession = null;
+  if (!saveState()) return false;
   if (showSummary) {
     alert('Sessione terminata\nRisposte corrette: ' + good + '\nErrori: ' + bad +
       '\nPercentuale corrette: ' + (summary.percentage === null ? '—' : summary.percentage + '%') +
-      '\nRisposte non sicure/non valutabili: ' + (results.length - total));
+      '\nRisposte non valutabili: ' + (results.length - good - bad));
   }
   render();
+  return true;
 }
+
+function summarizeSession(session, ended, interrupted) {
+  const results = session.results;
+  const good = results.filter(r => r.outcome === 'correct').length;
+  const bad = results.filter(r => r.outcome === 'wrong').length;
+  const total = good + bad;
+  return {...session, ended, interrupted, correct: good, wrong: bad,
+    percentage: total ? Math.round(1000 * good / total) / 10 : null};
+}
+
+function answerCounts(attempts) {
+  const correct = attempts.filter(result => result.outcome === 'correct').length;
+  const wrong = attempts.filter(result => result.outcome === 'wrong').length;
+  return {wrong, precision: correct + wrong
+    ? (100 * correct / (correct + wrong)).toFixed(1) + '%' : '—'};
+}
+
 function updateStatsPanel() {
   const box = $('statsPanel');
   if (!box) return;
   const qs = visibleBank();
-  const total = stats.attempts.filter(x => x.outcome === 'correct' || x.outcome === 'wrong');
-  const good = total.filter(x => x.outcome === 'correct').length;
-  const rate = total.length ? (100 * good / total.length).toFixed(1) + '%' : '—';
-  const last = stats.sessions.at(-1);
-  const sections = [...new Set(qs.map(q => q.section))].sort();
-  const lines = sections.map(section => {
-    const entries = total.filter(x => x.section === section);
-    if (!entries.length) return '';
-    const ok = entries.filter(x => x.outcome === 'correct').length;
-    return '<tr><td>' + section + '</td><td>' + entries.length + '</td><td>' +
-      (100 * ok / entries.length).toFixed(1) + '%</td><td>' +
-      qs.filter(q => q.section === section && isUnresolved(q)).length + '</td></tr>';
+  const counts = answerCounts(stats.attempts);
+  const rows = CHAPTERS.flatMap(([chapter, , sections]) =>
+    [chapter, ...sections.map(([section]) => section)]).map(section => {
+    const belongs = value => value === section || value.startsWith(section + '.');
+    const attempts = stats.attempts.filter(result => belongs(result.section));
+    const quizzes = qs.filter(quiz => belongs(quiz.section));
+    const open = quizzes.filter(isUnresolved).length;
+    if (!attempts.length && !open) return '';
+    return '<tr><td>' + section + '</td><td>' +
+      quizzes.filter(quiz => progress[quizKey(quiz)]?.attempts > 0).length +
+      '</td><td>' + attempts.length + '</td><td>' +
+      answerCounts(attempts).precision + '</td><td>' + open + '</td></tr>';
   }).join('');
-  box.innerHTML = '<h2>📊 Le mie statistiche</h2><p><strong>Risposte corrette:</strong> ' + rate +
-    ' · <strong>Errori:</strong> ' + (total.length ? (100 * (total.length-good)/total.length).toFixed(1) + '%' : '—') +
-    ' · <strong>Da recuperare:</strong> ' + qs.filter(isUnresolved).length +
-    '</p><p><strong>Ultima sessione:</strong> ' + (last ? (last.percentage === null ? 'Nessuna risposta valutabile' : last.percentage + '% corrette') : 'Nessuna sessione conclusa') +
-    ' · <strong>Quiz unici:</strong> ' + qs.length + ' su ' + bank.length +
-    ' originali</p><div style="overflow-x:auto"><table class="stats-table"><thead><tr><th>Sezione</th><th>Tentativi</th><th>Corrette</th><th>Errori aperti</th></tr></thead><tbody>' +
-    lines + '</tbody></table></div>';
-}
-// Ripristino della sessione precedente, se il browser era stato chiuso.
-const interrupted = load('am1_active_session_v1', null);
-if (interrupted && Array.isArray(interrupted.results)) {
-  stats.sessions.push({...interrupted, ended:new Date().toISOString(), interrupted:true,
-    correct:interrupted.results.filter(r => r.outcome === 'correct').length,
-    wrong:interrupted.results.filter(r => r.outcome === 'wrong').length,
-    percentage:(() => {const c=interrupted.results.filter(r=>r.outcome==='correct').length;
-      const w=interrupted.results.filter(r=>r.outcome==='wrong').length;
-      return c+w ? Math.round(1000*c/(c+w))/10 : null;})()});
-  localStorage.setItem(STATS_KEY, JSON.stringify(stats));
-  localStorage.removeItem('am1_active_session_v1');
-}
-function persistActiveSession() {
-  if (activeSession) localStorage.setItem('am1_active_session_v1', JSON.stringify(activeSession));
-  else localStorage.removeItem('am1_active_session_v1');
+  const history = stats.sessions.slice().reverse().map(session =>
+    '<li>' + new Date(session.ended).toLocaleString('it-IT') + ' · ' +
+    session.results.length + ' tentativi · Precisione ' +
+    (session.percentage === null ? '—' : session.percentage.toFixed(1) + '%') +
+    (session.interrupted ? ' · Interrotta' : '') + '</li>').join('');
+  box.innerHTML = '<h2>📊 Le mie statistiche</h2><p><strong>Tentativi:</strong> ' +
+    stats.attempts.length + ' · <strong>Risposte errate:</strong> ' + counts.wrong +
+    ' · <strong>Errori aperti:</strong> ' + qs.filter(isUnresolved).length +
+    '</p><p>Precisione: risposte corrette su risposte valutabili.</p>' +
+    '<p>Quiz unici: ' + qs.length + ' su ' + bank.length + ' originali</p>' +
+    '<div style="overflow-x:auto"><table class="stats-table"><thead><tr>' +
+    '<th>Capitolo / sezione</th><th>Affrontati</th><th>Tentativi</th>' +
+    '<th>Precisione</th><th>Errori aperti</th></tr></thead><tbody>' + rows +
+    '</tbody></table></div><details><summary>Storico delle sessioni</summary>' +
+    (history ? '<ul>' + history + '</ul>' : '<p>Nessuna sessione conclusa.</p>') + '</details>';
 }
 
 // ============================================================
@@ -727,19 +688,7 @@ function persistActiveSession() {
 
 function render() {
   const attempted = visibleBank().filter(
-    quiz => progress[quiz.id]?.attempts > 0
-  );
-
-  const attempts = attempted.reduce(
-    (total, quiz) =>
-      total + progress[quiz.id].attempts,
-    0
-  );
-
-  const correct = attempted.reduce(
-    (total, quiz) =>
-      total + progress[quiz.id].correct,
-    0
+    quiz => progress[quizKey(quiz)]?.attempts > 0
   );
 
   $('total').textContent = visibleBank().length;
@@ -748,9 +697,7 @@ function render() {
 
   $('due').textContent = visibleBank().filter(due).length;
 
-  $('accuracy').textContent = attempts
-    ? Math.round(100 * correct / attempts) + '%'
-    : '—';
+  $('accuracy').textContent = answerCounts(stats.attempts).precision;
 
   $('review').disabled = !visibleBank().some(due);
 
@@ -761,10 +708,7 @@ function render() {
   );
 
   $('errorCount').textContent =
-    visibleBank().filter(quiz =>
-      isUnresolved(quiz) ||
-      (errorNotes[quiz.id] || '').trim()
-    ).length + ' domande da rivedere';
+    visibleBank().filter(isUnresolved).length + ' domande da recuperare';
 
   $('chapters').replaceChildren();
   updateStatsPanel();
@@ -807,7 +751,7 @@ function render() {
       small.textContent =
         qs.length + ' quiz · ' +
         qs.filter(
-          quiz => progress[quiz.id]?.attempts > 0
+          quiz => progress[quizKey(quiz)]?.attempts > 0
         ).length + ' svolti · ' +
         qs.filter(due).length + ' da ripassare';
 
@@ -823,7 +767,7 @@ function render() {
         ['▶ Inizia test', quiz => true],
         [
           'Solo nuovi',
-          quiz => !progress[quiz.id]?.attempts
+          quiz => !progress[quizKey(quiz)]?.attempts
         ],
         ['Errori', isUnresolved]
       ];
@@ -883,15 +827,13 @@ if (!previousButton) {
 // ============================================================
 
 function start(items, title, shuffle = false) {
-  if (activeSession) finishSession(false);
-  queue = [...items];
-  activeSession = {title, started:new Date().toISOString(), results:[]};
-  persistActiveSession();
-
-  if (!queue.length) {
+  if (!items.length) {
     alert('Non ci sono quiz disponibili.');
     return;
   }
+  if (activeSession && !finishSession(false)) return;
+  queue = [...items];
+  activeSession = {title, started: new Date().toISOString(), results: []};
 
   if (shuffle) {
     for (let i = queue.length - 1; i > 0; i--) {
@@ -995,10 +937,10 @@ function show() {
 
   previousButton.disabled = idx === 0;
 
-  $('unsure').disabled = !graded || !Number.isInteger(quiz.correct);
-  $('unsure').textContent = 'Non ero sicura';
+  $('unsure').disabled = !graded || answerText(quiz) === null || !!state.unsure;
+  $('unsure').textContent = state.unsure ? '★ Segnato da ripassare' : 'Non ero sicura';
   $('hard').textContent =
-    progress[quiz.id]?.hard
+    progress[quizKey(quiz)]?.hard
       ? '★ Difficile'
       : '☆ Segna difficile';
 
@@ -1074,53 +1016,21 @@ function grade() {
 
   const quiz = queue[idx];
 
-  const p = progress[quiz.id] || {
-    attempts: 0,
-    correct: 0,
-    streak: 0,
-    hard: false
-  };
-
-  const hasKey =
-    Number.isInteger(quiz.correct) &&
-    quiz.correct >= 0 &&
-    quiz.correct < quiz.options.length;
-
-  const ok =
-    hasKey &&
-    selected === quiz.correct;
-
-  p.attempts++;
-
-  if (hasKey && ok) {
-    p.correct++;
-    p.streak++;
-  } else {
-    p.streak = 0;
+  const hasKey = answerText(quiz) !== null;
+  const outcome = !hasKey ? 'ungraded' : selected === quiz.correct ? 'correct' : 'wrong';
+  const session = activeSession;
+  applyAnswer(quiz, outcome);
+  if (!saveState()) {
+    if (!activeSession && session) activeSession = {...session, results: []};
+    return;
   }
 
-  recordResult(quiz, !hasKey ? 'ungraded' : ok ? 'correct' : 'wrong');
-  persistActiveSession();
-
-  p.due = day(
-    ok
-      ? p.hard
-        ? 1
-        : [1, 3, 7, 14, 30][
-            Math.min(p.streak - 1, 4)
-          ]
-      : 1
-  );
-
-  progress[quiz.id] = p;
-
-  save();
-
+  render();
   graded = true;
   sessionStates[idx].graded = true;
 
   displayCorrection(quiz);
-  $('unsure').disabled = !Number.isInteger(quiz.correct);
+  $('unsure').disabled = !hasKey;
   typeset();
 }
 
@@ -1145,7 +1055,7 @@ function showCorrection(quiz) {
   field.placeholder =
     'Scrivi cosa hai sbagliato o cosa vuoi ricordare...';
 
-  field.value = errorNotes[quiz.id] || '';
+  field.value = errorNotes[quizKey(quiz)] || '';
 
   field.setAttribute(
     'aria-label',
@@ -1168,10 +1078,11 @@ function showCorrection(quiz) {
   saved.className = 'muted';
 
   saveNote.onclick = () => {
-    errorNotes[quiz.id] = field.value;
+    errorNotes[quizKey(quiz)] = field.value;
 
-    if (saveErrors()) {
+    if (saveState()) {
       saved.textContent = '✓ Salvato';
+      render();
     }
   };
 
@@ -1182,8 +1093,9 @@ function showCorrection(quiz) {
 
   retry.onclick = () => {
     // Conserva le annotazioni scritte.
-    errorNotes[quiz.id] = field.value;
-    saveErrors();
+    errorNotes[quizKey(quiz)] = field.value;
+    if (!saveState()) return;
+    render();
 
     sessionStates[idx] = {
       selected: -1,
@@ -1395,16 +1307,38 @@ $('cancel').onclick = () => {
 // BACKUP
 // ============================================================
 
-$('export').onclick = () => {
-  download('analisi1_backup.json', {
-    version: 5,
-    quizzes: bank,
-    progress,
-    errorNotes,
-    errorHistory,
-    stats
-  });
+function exportBackup(name = 'analisi1_backup.json') {
+  download(name, {format: 'quiz-analisi', version: 6, quizzes: bank,
+    state: {...state, activeSession}});
+}
+
+$('export').onclick = () => exportBackup();
+
+const legacyKeys = {
+  quizzes: 'am1_v3_bank', progress: 'am1_v3_progress',
+  errorNotes: 'am1_error_notes', errorHistory: 'am1_error_history',
+  stats: 'am1_stats_v1', activeSession: 'am1_active_session_v1'
 };
+const legacyButton = document.createElement('button');
+legacyButton.className = 'secondary';
+legacyButton.textContent = 'Esporta dati precedenti';
+legacyButton.onclick = () => {
+  try {
+    const legacy = {};
+    for (const [field, key] of Object.entries(legacyKeys)) {
+      const value = localStorage.getItem(key);
+      if (value !== null) legacy[field] = JSON.parse(value);
+    }
+    if (!Object.keys(legacy).length) {
+      $('status').textContent = 'Nessun dato precedente disponibile.';
+      return;
+    }
+    download('analisi1_dati_precedenti.json', {version: 5, ...legacy});
+  } catch (error) {
+    $('status').textContent = 'Esportazione non riuscita. ' + error.message;
+  }
+};
+$('export').after(legacyButton);
 
 // ============================================================
 // IMPORTAZIONE JSON
@@ -1443,56 +1377,116 @@ $('jsonFile').onchange = async function () {
 // RIPRISTINO BACKUP
 // ============================================================
 
+function isRecord(value) {
+  return !!value && typeof value === 'object' && !Array.isArray(value);
+}
+
+function validAttempt(result) {
+  return isRecord(result) && typeof result.section === 'string' &&
+    typeof result.key === 'string' && ['correct', 'wrong', 'ungraded'].includes(result.outcome) &&
+    typeof result.at === 'string' && Number.isFinite(Date.parse(result.at));
+}
+
+function validSession(session) {
+  return isRecord(session) && Array.isArray(session.results) && session.results.every(validAttempt);
+}
+
+function validState(value) {
+  return isRecord(value) && isRecord(value.progress) && isRecord(value.errorHistory) &&
+    isRecord(value.errorNotes) && Object.values(value.errorNotes).every(note => typeof note === 'string') &&
+    Object.values(value.progress).every(p => isRecord(p) &&
+      Number.isSafeInteger(p.attempts) && p.attempts >= 0 &&
+      Number.isSafeInteger(p.streak) && p.streak >= 0) &&
+    Object.values(value.errorHistory).every(h => isRecord(h) &&
+      Number.isSafeInteger(h.wrong) && h.wrong >= 0 && Array.isArray(h.recoveryDays)) &&
+    isRecord(value.stats) && Array.isArray(value.stats.attempts) && value.stats.attempts.every(validAttempt) &&
+    Array.isArray(value.stats.sessions) && value.stats.sessions.every(session =>
+      validSession(session) && (session.percentage === null || Number.isFinite(session.percentage))) &&
+    (value.activeSession === null || validSession(value.activeSession));
+}
+
+function legacyState(backup) {
+  const quizzes = new Map(backup.quizzes.map(quiz => [String(quiz.id), quiz]));
+  function convert(entry) {
+    const quiz = quizzes.get(String(entry?.id));
+    if (!quiz || quiz.section !== entry.section ||
+        !['correct', 'wrong', 'ungraded', 'unsure'].includes(entry.outcome) ||
+        !Number.isFinite(Date.parse(entry.at))) return null;
+    return {key: quizKey(quiz), section: quiz.section, outcome: entry.outcome, at: entry.at};
+  }
+
+  const before = {...state, activeSession};
+  setState(emptyState());
+  try {
+    for (const entry of Array.isArray(backup.stats?.attempts) ? backup.stats.attempts : []) {
+      const result = convert(entry);
+      if (!result) continue;
+      const quiz = quizzes.get(String(entry.id));
+      if (result.outcome === 'unsure') recordResult(quiz, 'unsure', day(0, result.at), result.at);
+      else applyAnswer(quiz, result.outcome, result.at);
+    }
+    for (const [id, quiz] of quizzes) {
+      const note = backup.errorNotes?.[id];
+      if (typeof note === 'string' && note.trim()) errorNotes[quizKey(quiz)] = note;
+      if (backup.progress?.[id]?.hard === true) {
+        const key = quizKey(quiz);
+        progress[key] = {...(progress[key] || {attempts: 0, streak: 0}), hard: true};
+      }
+    }
+    const sessions = Array.isArray(backup.stats?.sessions) ? backup.stats.sessions : [];
+    const archived = [...sessions, backup.activeSession];
+    for (const session of archived) {
+      if (!Array.isArray(session?.results)) continue;
+      const results = session.results.map(convert).filter(result => result && result.outcome !== 'unsure');
+      if (!results.length) continue;
+      const ended = session.ended || results.at(-1).at;
+      stats.sessions.push(summarizeSession({results}, ended, !!session.interrupted || !session.ended));
+    }
+    return state;
+  } finally {
+    setState(before);
+  }
+}
+
 $('backupFile').onchange = async function () {
   const file = this.files?.[0];
-
   this.value = '';
-
   if (!file) return;
 
   try {
-    const obj = JSON.parse(await file.text());
-
-    importBank(obj.quizzes);
-
-    if (
-      obj.progress &&
-      typeof obj.progress === 'object'
-    ) {
-      progress = {
-        ...progress,
-        ...obj.progress
-      };
+    const backup = JSON.parse(await file.text());
+    const modern = backup?.format === 'quiz-analisi' && backup.version === 6;
+    const legacy = backup?.version === 5 && backup.format === undefined;
+    if ((!modern && !legacy) || !Array.isArray(backup.quizzes) ||
+        backup.quizzes.some(quiz => !isRecord(quiz) || quiz.id == null ||
+          typeof quiz.question !== 'string' || typeof quiz.section !== 'string' ||
+          !Array.isArray(quiz.options) || quiz.options.length < 2 ||
+          quiz.options.some(option => typeof option !== 'string')) ||
+        (modern && !validState(backup.state))) {
+      throw new Error('Formato del backup non valido.');
     }
+    const message = legacy
+      ? 'Sostituire i progressi correnti con i tentativi dettagliati e le note del vecchio backup? Procedi solo se riconosci questi dati come tuoi.'
+      : 'Ripristinare i progressi del backup? I progressi correnti saranno sostituiti.';
+    if (!confirm(message + ' Verrà scaricata una copia dei dati correnti.')) return;
 
-    if (
-      obj.errorNotes &&
-      typeof obj.errorNotes === 'object'
-    ) {
-      Object.assign(errorNotes, obj.errorNotes);
+    exportBackup('analisi1_prima_del_ripristino.json');
+    const next = modern ? backup.state : legacyState(backup);
+    if (next.activeSession?.results.length) {
+      next.stats.sessions.push(summarizeSession(next.activeSession, new Date().toISOString(), true));
     }
-
-    if (obj.stats && Array.isArray(obj.stats.sessions)) {
-      stats = obj.stats;
-      localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+    next.activeSession = null;
+    importBank(backup.quizzes);
+    setState(next);
+    if (!saveState()) {
+      render();
+      $('status').textContent = 'Archivio importato. Ripristino dei progressi non riuscito.';
+      return;
     }
-    if (
-      obj.errorHistory &&
-      typeof obj.errorHistory === 'object'
-    ) {
-      Object.assign(errorHistory, obj.errorHistory);
-    }
-
-    save();
-    saveErrors();
     render();
-
-    $('status').textContent =
-      'Backup ripristinato.';
-
+    $('status').textContent = 'Backup ripristinato.';
   } catch (error) {
-    $('status').textContent =
-      'Errore: ' + error.message;
+    $('status').textContent = 'Errore: ' + error.message;
   }
 };
 
@@ -1504,17 +1498,18 @@ $('previousTop').onclick = () => previousButton.click();
 $('nextTop').onclick = () => $('next').click();
 $('unsure').onclick = () => {
   const quiz = queue[idx];
-  if (!graded || !Number.isInteger(quiz.correct) || $('unsure').disabled) return;
+  if (!graded || answerText(quiz) === null || sessionStates[idx].unsure) return;
   // La risposta resta corretta nel conteggio grezzo, ma il quiz va ripassato.
   recordResult(quiz, 'unsure');
-  persistActiveSession();
+  if (!saveState()) return;
+  sessionStates[idx].unsure = true;
   $('unsure').disabled = true;
   $('unsure').textContent = '★ Segnato da ripassare';
   render();
 };
 $('review').onclick = () => {
   start(
-    bank.filter(due),
+    visibleBank().filter(due),
     'Ripasso quotidiano'
   );
 };
@@ -1533,8 +1528,7 @@ $('next').onclick = () => {
     idx++;
     show();
   } else {
-    finishSession();
-    persistActiveSession();
+    if (!finishSession()) return;
     $('session').classList.add('hidden');
     $('home').classList.remove('hidden');
     render();
@@ -1542,8 +1536,7 @@ $('next').onclick = () => {
 };
 
 $('exit').onclick = () => {
-  finishSession();
-  persistActiveSession();
+  if (!finishSession()) return;
   $('session').classList.add('hidden');
   $('home').classList.remove('hidden');
 
@@ -1557,18 +1550,17 @@ $('exit').onclick = () => {
 $('hard').onclick = () => {
   const quiz = queue[idx];
 
-  const p = progress[quiz.id] || {
-    attempts: 0,
-    correct: 0,
-    streak: 0,
-    hard: false
-  };
+  const p = progress[quizKey(quiz)] || {attempts: 0, streak: 0, hard: false};
 
+  const session = activeSession;
   p.hard = !p.hard;
 
-  progress[quiz.id] = p;
+  progress[quizKey(quiz)] = p;
 
-  save();
+  if (!saveState()) {
+    if (!activeSession && session) activeSession = session;
+    return;
+  }
 
   $('hard').textContent = p.hard
     ? '★ Difficile'
@@ -1590,7 +1582,7 @@ function openErrorRegister() {
 
   const qs = visibleBank().filter(quiz =>
     isUnresolved(quiz) ||
-    (errorNotes[quiz.id] || '').trim()
+    (errorNotes[quizKey(quiz)] || '').trim()
   );
 
   if (!qs.length) {
@@ -1614,8 +1606,9 @@ function openErrorRegister() {
     heading.textContent =
       quiz.section +
       ' · ' +
-      (errorHistory[quiz.id]?.wrong || 0) +
-      ' errori registrati';
+      (errorHistory[quizKey(quiz)]?.wrong || 0) +
+      ' errori registrati' +
+      (isUnresolved(quiz) && errorHistory[quizKey(quiz)]?.marked ? ' · Segnato da ripassare' : '');
 
     wrap.append(heading);
 
@@ -1644,7 +1637,7 @@ function openErrorRegister() {
 
     const field = document.createElement('textarea');
 
-    field.value = errorNotes[quiz.id] || '';
+    field.value = errorNotes[quizKey(quiz)] || '';
 
     field.placeholder =
       'Cosa ho sbagliato? Cosa devo ricordare?';
@@ -1666,9 +1659,10 @@ function openErrorRegister() {
     saveButton.textContent = 'Salva annotazione';
 
     saveButton.onclick = () => {
-      errorNotes[quiz.id] = field.value;
+      errorNotes[quizKey(quiz)] = field.value;
 
-      saveErrors();
+      if (!saveState()) return;
+      render();
 
       saveButton.textContent = 'Salvato';
 
@@ -1734,8 +1728,8 @@ $('exportErrors').onclick = () => {
 
     visibleBank()
       .filter(quiz =>
-        errorHistory[quiz.id]?.wrong > 0 ||
-        (errorNotes[quiz.id] || '').trim()
+        isUnresolved(quiz) || errorHistory[quizKey(quiz)]?.wrong > 0 ||
+        (errorNotes[quizKey(quiz)] || '').trim()
       )
       .map(quiz => ({
         id: quiz.id,
@@ -1743,12 +1737,13 @@ $('exportErrors').onclick = () => {
         question: quiz.question,
 
         wrong:
-          errorHistory[quiz.id]?.wrong || 0,
+          errorHistory[quizKey(quiz)]?.wrong || 0,
 
         lastWrong:
-          errorHistory[quiz.id]?.lastWrong || null,
+          errorHistory[quizKey(quiz)]?.lastWrong || null,
 
-        note: errorNotes[quiz.id] || ''
+        daRipassare: isUnresolved(quiz),
+        note: errorNotes[quizKey(quiz)] || ''
       }))
   );
 };
@@ -1809,7 +1804,7 @@ async function loadPublishedQuizBank() {
 
 installReadableStyles();
 refreshUniqueBank();
+if (activeSession) finishSession(false, true);
 render();
 
 loadPublishedQuizBank();
-window.addEventListener('pagehide', persistActiveSession);
