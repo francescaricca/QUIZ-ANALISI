@@ -1,0 +1,522 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 451-460 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine originali 451-460: 12 quesiti del test precedente e 20 della 25a simulazione.
+% Pagine 455 e 460: chiave delle risposte e consigli, senza nuovi quesiti.
+
+% Pag. originale 451/521
+\iffalse Pag. originale 451/521 \fi
+\begin{quiz}
+La funzione $f$ ha sviluppo di Taylor $f(x)=-10-2(x+5)+(x+5)^4+o((x+5)^4)$ per $x\to-5$; allora $f$
+\begin{enumerate}
+\item ammette $y=-2x-10$ come retta tangente in $x=-5$
+\item \`e crescente in un intorno di $x=-5$
+\item presenta un massimo relativo in $x=-5$
+\item presenta un minimo relativo in $x=-5$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $f(-5)=-10$ e $f\prime(-5)=-2$: la tangente \`e $y=-10-2(x+5)=-2x-20$, non quella proposta. La derivata non nulla esclude estremi locali e crescita in un intorno.
+
+% Pag. originale 451/521
+\iffalse Pag. originale 451/521 \fi
+\begin{quiz}
+\`E data la funzione $f(x)=x e^{\arctan(1/x)}$ definita su $\mathbb R\setminus\{0\}$. Allora \`e vera l\textquotesingle affermazione, valida su $\mathbb R\setminus\{0\}$:
+\begin{enumerate}
+\item $\dfrac{f\prime(x)}{f(x)}=\dfrac1{x(x^2+1)}$
+\item $\dfrac{f\prime(x)}{f(x)}=\dfrac{x^2-x+1}{x(x^2+1)}$
+\item $f\prime(x)=\dfrac{-x^2(x^2-x+1)e^{\arctan(1/x)}}{x^2+1}$
+\item la $f$ non \`e derivabile su $\mathbb R\setminus\{0\}$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Derivando $\log|f(x)|=\log|x|+\arctan(1/x)$ si ottiene $f\prime/f=1/x-1/(x^2+1)=(x^2-x+1)/(x(x^2+1))$.
+
+% Pag. originale 451/521
+\iffalse Pag. originale 451/521 \fi
+\begin{quiz}
+\`E data la funzione $f:(-2,a)\to\mathbb R$ definita come $f(x)=|x+1|+2|x|$, essendo $a>-2$.
+\begin{enumerate}
+\item essa \`e iniettiva se e solo se $-2<a\le0$
+\item essa \`e iniettiva solo se $-2<a\le2$
+\item essa \`e iniettiva se e solo se $-2<a<0$
+\item essa non pu\`o essere iniettiva
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: La funzione vale $-3x-1$ per $x<-1$, $1-x$ per $-1\le x\le0$ e $3x+1$ per $x>0$. \`E strettamente decrescente fino a $0$ e poi crescente: sul dominio $(-2,a)$ \`e iniettiva esattamente per $a\le0$.
+
+% Pag. originale 452/521
+\iffalse Pag. originale 452/521 \fi
+\begin{quiz}
+Sia $f(x)$ una funzione derivabile in un intorno del punto $x=1$ e siano $f(1)=3$, $f\prime(1)=-2$. Allora la derivata della funzione $g(x)=e^{f(x)}$:
+\begin{enumerate}
+\item $g\prime(1)=e^{-2}$
+\item $g\prime(1)=e^3$
+\item $g\prime(1)=-2e^3$
+\item $g\prime(1)=2e^3$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Per la regola della catena $g\prime(x)=e^{f(x)}f\prime(x)$; quindi $g\prime(1)=-2e^3$.
+
+% Pag. originale 452/521
+\iffalse Pag. originale 452/521 \fi
+\begin{quiz}
+Sia $f:A\subseteq\mathbb R\to\mathbb R$ una funzione derivabile su $A$. Quale delle affermazioni che seguono \`e vera?
+\begin{enumerate}
+\item se $x_0$ \`e punto di flesso allora $f\prime(x_0)=0$
+\item se $f\prime(x_0)=0$ allora $x_0$ \`e punto di estremo per $f$
+\item se $f\prime(x)>0$ per ogni $x\in A$ allora $f$ \`e crescente su $A$
+\item se $f\prime(x_1)=0$ allora $f$ ammette retta tangente nel punto di ascissa $x_1\in A$
+\item se risulta $A=(2,+\infty)$ e $\lim_{x\to+\infty}f\prime(x)=0$ allora $f$ ha asintoto orizzontale destro
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: La derivabilit\`a in $x_1$ garantisce una retta tangente, orizzontale se $f\prime(x_1)=0$. Un flesso pu\`o avere derivata non nulla; una derivata nulla non implica estremo; $f\prime\to0$ non basta per un asintoto orizzontale.
+
+% Pag. originale 452/521
+\iffalse Pag. originale 452/521 \fi
+\begin{quiz}
+L\textquotesingle integrale improprio $\displaystyle\int_0^{1/2}\frac{dx}{\sqrt[3]{x-2x^2}}$:
+\begin{enumerate}
+\item converge
+\item diverge
+\item non esiste
+\item \`e indefinito
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 6.2
+% SPIEGAZIONE: Vicino a $0$ l\textquotesingle integranda \`e dell\textquotesingle ordine $x^{-1/3}$; vicino a $1/2$ \`e dell\textquotesingle ordine $(1/2-x)^{-1/3}$. Entrambe le singolarit\`a sono integrabili perch\`e $1/3<1$.
+
+% Pag. originale 453/521
+\iffalse Pag. originale 453/521 \fi
+\begin{quiz}
+L\textquotesingle equazione differenziale $\displaystyle y\prime=\frac{2x+3y}{2x+3}$:
+\begin{enumerate}
+\item \`e un\textquotesingle equazione del primo ordine a variabili separabili
+\item \`e un\textquotesingle equazione del primo ordine omogenea
+\item \`e un\textquotesingle equazione del primo ordine lineare
+\item \`e un\textquotesingle equazione del primo ordine sia a variabili separabili, sia lineare
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.3
+% SPIEGAZIONE: Riscrivendo $y'=\frac{3}{2x+3}y+\frac{2x}{2x+3}$ si riconosce un'equazione lineare del primo ordine, non a variabili separabili in generale.
+
+% Pag. originale 453/521
+\iffalse Pag. originale 453/521 \fi
+\begin{quiz}
+Sia $f:A\subseteq\mathbb R\to\mathbb R$ una funzione monotona strettamente crescente su $A=(0,10)$. Allora:
+\begin{enumerate}
+\item essa ammette finito il $\lim_{x\to0^+}f(x)$
+\item essa \`e iniettiva e suriettiva
+\item essa \`e invertibile su $A$
+\item essa \`e continua su $A$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Una funzione strettamente crescente \`e iniettiva, quindi invertibile sulla propria immagine $f(A)$. Non deve essere continua o suriettiva su $\mathbb R$, n\`e avere limite finito agli estremi.
+
+% Pag. originale 453/521
+\iffalse Pag. originale 453/521 \fi
+\begin{quiz}
+Detto $A=\mathbb R\setminus\{0\}$, sia data la funzione $f:A\to\mathbb R$ definita da $f(x)=1-\dfrac1{|x|}$. Allora la funzione $g=f\circ f$ ammette come dominio (pi\`u esteso) $D$ l\textquotesingle insieme:
+\begin{enumerate}
+\item $D=\mathbb R\setminus\{+1,-1\}$
+\item $D=A\setminus\{+1,-1\}$
+\item $D=\mathbb R\setminus\{0\}$
+\item $D=\mathbb R$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Serve $x\ne0$ e $f(x)\ne0$; quest\textquotesingle ultima condizione equivale a $|x|\ne1$. Quindi $D=\mathbb R\setminus\{-1,0,1\}$.
+
+% Pag. originale 453/521
+\iffalse Pag. originale 453/521 \fi
+\begin{quiz}
+Una primitiva della funzione $\displaystyle h(x)=\frac{1}{(x+1)\sqrt{-x}}$ \`e:
+\begin{enumerate}
+\item $H(x)=2\log(\sqrt{-x}-1)-\log(x+1)+3$
+\item $H(x)=2\log|\sqrt{-x}-1|-\log|x+1|$
+\item $H(x)=2\arctan\sqrt{-x}+1$
+\item la funzione non ammette primitive in senso proprio
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: ATTENZIONE: nel testo originale la risposta A contiene logaritmi senza valori assoluti, non definiti su tutto il dominio reale di $h$; B presenta i valori assoluti ed \`e una primitiva sui componenti appropriati. La chiave ufficiale indica A. Inoltre per $x<-1$ la A \`e definita, ma $\log(x+1)$ non lo \`e: incongruenza del quesito. Verificare il dominio scelto.
+
+% Pag. originale 454/521
+\iffalse Pag. originale 454/521 \fi
+\begin{quiz}
+Sia data la funzione $f(x)=(1+e^x)^2$. Il suo rapporto incrementale calcolato in $x=0$:
+\begin{enumerate}
+\item vale $\left.\dfrac{\Delta y}{\Delta x}\right|_{x_0=0}=\dfrac{(e^x-1)(e^x+3)}{x}$
+\item vale $\left.\dfrac{\Delta y}{\Delta x}\right|_{x_0=0}=\dfrac{(e^x-1)(e^x-3)}{x}$
+\item vale $\left.\dfrac{\Delta y}{\Delta x}\right|_{x_0=0}=4$
+\item non pu\`o essere calcolato, in quanto non \`e definito
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $f(0)=4$ e $f(x)-4=e^{2x}+2e^x-3=(e^x-1)(e^x+3)$; dividendo per $x$ si ha A. Il valore $4$ \`e invece il limite del rapporto incrementale.
+
+% Pag. originale 454/521
+\iffalse Pag. originale 454/521 \fi
+\begin{quiz}
+\`E data la funzione $f(x)=\log(1+x)\sin^2\sqrt{x}-x^2$. La parte principale di $f(x)$, rispetto all\textquotesingle infinitesimo campione, per $x\to0^+$ vale:
+\begin{enumerate}
+\item $p(x)=x^2$
+\item $p(x)=-x^2$
+\item $p(x)=x^3$
+\item $p(x)=-\dfrac56x^3$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $\log(1+x)=x-x^2/2+O(x^3)$ e $\sin^2\sqrt{x}=x-x^2/3+O(x^3)$, perci\`o il prodotto \`e $x^2-5x^3/6+O(x^4)$. Sottraendo $x^2$ resta $-5x^3/6$.
+
+% Pag. originale 456/521
+\iffalse Pag. originale 456/521 \fi
+\begin{quiz}
+Siano $A$ e $B$ due sottoinsiemi non vuoti di $\mathbb R$, tali che $\sup A>\inf B$. Allora necessariamente:
+\begin{enumerate}
+\item $\inf A<\sup B$
+\item $A\cap B$ non \`e vuoto
+\item $\inf A\le\sup B$
+\item esistono $x\in A$ e $y\in B$ tali che $x>y$
+\item nessuna delle altre risposte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 1.2
+% SPIEGAZIONE: Per definizione di estremo superiore e inferiore, $\sup A>\inf B$ garantisce elementi $x\in A$ e $y\in B$ con $x>y$. Le altre alternative non sono necessarie; A e C possono fallire per insiemi non limitati.
+
+% Pag. originale 456/521
+\iffalse Pag. originale 456/521 \fi
+\begin{quiz}
+La funzione $f(x)=|\log(4-x)|$:
+\begin{enumerate}
+\item \`e invertibile sull\textquotesingle intervallo $[0,4)$
+\item \`e invertibile sull\textquotesingle intervallo $[3,+\infty)$
+\item \`e invertibile sull\textquotesingle intervallo $(-\infty,4)$
+\item non \`e invertibile su alcun intervallo
+\item \`e convessa su tutto il suo dominio
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: La funzione \`e strettamente crescente su $(3,4)$, quindi invertibile l\`i. ATTENZIONE: la risposta B nell\textquotesingle originale riporta $[3,+\infty)$, che esce dal dominio $x<4$ e non \`e letteralmente valida. La chiave ufficiale indica B, intendendo evidentemente $[3,4)$.
+
+% Pag. originale 456/521
+\iffalse Pag. originale 456/521 \fi
+\begin{quiz}
+La funzione $f(x)=xe^{x^3-ax^2}$:
+\begin{enumerate}
+\item \`e strettamente crescente se e solo se $a\in[-\sqrt3,\sqrt3]$
+\item \`e strettamente crescente se e solo se $a\in(-\sqrt3,\sqrt3)$
+\item non \`e crescente per alcun valore di $a$
+\item \`e crescente se e solo se $a\le0$
+\item \`e crescente per ogni $a$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $f\prime(x)=e^{x^3-ax^2}(1+3x^3-2ax^2)$. Per $x\to-\infty$ il polinomio \`e negativo qualunque sia $a$, quindi la funzione non \`e crescente su tutta $\mathbb R$.
+
+% Pag. originale 456/521
+\iffalse Pag. originale 456/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to+\infty}(1+4x^2)^{1/\log x}$:
+\begin{enumerate}
+\item vale $1$
+\item vale $0$
+\item vale $+\infty$
+\item vale $4e$
+\item vale $e^2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Il logaritmo del limite \`e $\lim\log(1+4x^2)/\log x=2$, quindi il limite vale $e^2$.
+
+% Pag. originale 456/521
+\iffalse Pag. originale 456/521 \fi
+\begin{quiz}
+Per $x\to0$, sia $f(x)\sim x^2\cos x$ e $g(x)\sim e^x-1$. Allora si ha:
+\begin{enumerate}
+\item $\lim_{x\to0}\left|\dfrac{f(x)}{g(x)}\right|=+\infty$
+\item $\lim_{x\to0}\dfrac{f(x)}{g(x)}=\dfrac12$
+\item $\lim_{x\to0}\dfrac{f(x)}{g(x)}=0$
+\item $\lim_{x\to0}\dfrac{f(x)}{g(x)}=+\infty$
+\item $\lim_{x\to0}\dfrac{f(x)}{g(x)}=1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $f(x)\sim x^2$ e $g(x)\sim x$; dunque $f(x)/g(x)\sim x\to0$.
+
+% Pag. originale 457/521
+\iffalse Pag. originale 457/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to-\infty}(3x^3-4x^2)\sin\frac1x$:
+\begin{enumerate}
+\item vale $-\infty$
+\item vale $+\infty$
+\item vale $0$
+\item vale sia $+\infty$ che $-\infty$
+\item non esiste
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Poich\`e $\sin(1/x)\sim1/x$, il prodotto \`e asintotico a $3x^2-4x\to+\infty$.
+
+% Pag. originale 457/521
+\iffalse Pag. originale 457/521 \fi
+\begin{quiz}
+Sia $a_n$ una successione limitata inferiormente. Allora:
+\begin{enumerate}
+\item $\forall k>0\ \exists\bar n\in\mathbb N$ tale che $n>\bar n\Rightarrow a_n\ge k$
+\item per ogni $n$, $a_n\ge0$
+\item $\exists k<0$ tale che per ogni $n$, $a_n<k$
+\item $\exists\bar n\in\mathbb N$ tale che $n>\bar n\Rightarrow a_n>0$
+\item $\exists k<0$ tale che per ogni $n$, $a_n>k$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Una successione limitata inferiormente ammette un minorante reale $m$; scegliendo $k<\min\{m,0\}$ si ha $a_n>k$ per ogni $n$.
+
+% Pag. originale 457/521
+\iffalse Pag. originale 457/521 \fi
+\begin{quiz}
+Sia $f(x)=(3\cos x)^{4\cos x}$. Allora $f\prime(0)$ vale:
+\begin{enumerate}
+\item $1$
+\item $0$
+\item $3/4$
+\item $\log(3/4)$
+\item $-1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Vicino a $0$ la funzione \`e pari, quindi, essendo derivabile, ha derivata nulla nell\textquotesingle origine.
+
+% Pag. originale 457/521
+\iffalse Pag. originale 457/521 \fi
+\begin{quiz}
+La funzione $\displaystyle f(x)=\begin{cases}2\sin x+|x|^{3/2}&\text{se }x\le0,\\\sin(2x)&\text{se }x>0\end{cases}$:
+\begin{enumerate}
+\item \`e di classe $C^1$
+\item non \`e derivabile nell\textquotesingle origine
+\item \`e discontinua nell\textquotesingle origine
+\item \`e continua ma non \`e derivabile nell\textquotesingle origine
+\item nessuna delle altre affermazioni \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Le derivate laterali in $0$ valgono entrambe $2$; inoltre la derivata del termine $|x|^{3/2}$ tende a zero. La derivata \`e continua in $0$, dunque $f\in C^1$.
+
+% Pag. originale 457/521
+\iffalse Pag. originale 457/521 \fi
+\begin{quiz}
+Sia $f(x)=x^3+e^x$. Allora $(f^{-1})\prime(1)$:
+\begin{enumerate}
+\item nessuna altra risposta \`e corretta
+\item vale $1/(3+e)$
+\item non esiste
+\item vale $1/e$
+\item vale $e$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $f(0)=1$, $f\prime(0)=1$ e $f$ \`e strettamente crescente; quindi $(f^{-1})\prime(1)=1/f\prime(0)=1$, valore non elencato.
+
+% Pag. originale 458/521
+\iffalse Pag. originale 458/521 \fi
+\begin{quiz}
+Il polinomio di MacLaurin di ordine $6$ della funzione $f(x)=e^{\cos(x^3)}$ \`e:
+\begin{enumerate}
+\item $e+\frac12x^6$
+\item $e-\frac e2x^6$
+\item $2+\frac12x^6$
+\item $\frac12-\frac e2x^6$
+\item $e+\frac e6x^6$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $\cos(x^3)=1-x^6/2+O(x^{12})$; quindi $e^{\cos(x^3)}=e(1-x^6/2)+O(x^{12})$.
+
+% Pag. originale 458/521
+\iffalse Pag. originale 458/521 \fi
+\begin{quiz}
+Siano $f,g,h$ tre funzioni tali che $f=o(g)$ e $g\sim h^3$ per $x\to+\infty$. Allora:
+\begin{enumerate}
+\item $f=o(h^3)$
+\item $f\sim h^3$
+\item $\lim_{x\to+\infty}\dfrac{h(x)^3}{f(x)}=0$
+\item nessuna delle altre risposte
+\item $\lim_{x\to+\infty}\dfrac{f(x)}{h(x)^3}=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Da $f/g\to0$ e $g/h^3\to1$ segue $f/h^3\to0$. ATTENZIONE: anche E afferma esattamente la definizione di A, quindi due risposte risultano equivalenti nel testo originale.
+
+% Pag. originale 458/521
+\iffalse Pag. originale 458/521 \fi
+\begin{quiz}
+Sia $f:[0,3]\to\mathbb R$ una funzione continua e decrescente. Allora necessariamente:
+\begin{enumerate}
+\item $f([0,3])$ \`e un intervallo aperto
+\item $f((0,3))$ \`e un intervallo aperto
+\item $f((0,3))$ contiene almeno due punti
+\item $f([0,3))=[f(0),f(3))$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Una funzione costante \`e continua e decrescente (non strettamente): la sua immagine \`e un singoletto, che confuta A, B e C. La formula D ha inoltre gli estremi invertiti per funzioni decrescenti.
+
+% Pag. originale 458/521
+\iffalse Pag. originale 458/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione derivabile tale che $f(0)=f(1)=\pi/2$. Ponendo $g(x)=\sin(f(x))$, allora:
+\begin{enumerate}
+\item la derivata $g\prime(x)$ si annulla almeno tre volte
+\item la derivata $g\prime(x)$ si annulla esattamente due volte
+\item la derivata $g\prime(x)$ si annulla esattamente tre volte
+\item la derivata $g\prime(x)$ non si annulla mai
+\item la derivata $g\prime(x)$ si annulla almeno quattro volte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $g\prime(x)=\cos(f(x))f\prime(x)$, perci\`o $g\prime(0)=g\prime(1)=0$. Inoltre $g(0)=g(1)$: per Rolle esiste almeno un punto interno in cui $g\prime=0$.
+
+% Pag. originale 458/521
+\iffalse Pag. originale 458/521 \fi
+\begin{quiz}
+La parte principale (rispetto a $\varphi(x)=x$) per $x\to0^-$ di $f(x)=3x+\sqrt{4x^2+2x^3}$ \`e:
+\begin{enumerate}
+\item $5x$
+\item $x^{3/2}$
+\item $\sqrt2\,x^{3/2}$
+\item $3x$
+\item $x$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Per $x<0$, $\sqrt{4x^2+2x^3}=-2x\sqrt{1+x/2}=-2x+O(x^2)$, quindi $f(x)=x+O(x^2)$.
+
+% Pag. originale 459/521
+\iffalse Pag. originale 459/521 \fi
+\begin{quiz}
+Una primitiva della funzione $f(x)=\dfrac{x+1}{x-1}$ \`e:
+\begin{enumerate}
+\item $x+\log(1-x)^2$
+\item $x+\log|x-1|$
+\item $x+|\log(x-1)|$
+\item $2x+\log|x-1|$
+\item $\log\left|\dfrac{x+1}{x-1}\right|$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: $(x+1)/(x-1)=1+2/(x-1)$, dunque una primitiva \`e $x+2\log|x-1|=x+\log((1-x)^2)$.
+
+% Pag. originale 459/521
+\iffalse Pag. originale 459/521 \fi
+\begin{quiz}
+Dire quale tra i seguenti enunciati \`e corretto:
+\begin{enumerate}
+\item se $f$ \`e integrabile in $[a,b]$, allora $\exists c\in[a,b]$ tale che $f(c)=\frac1{b-a}\int_a^b f(x)\,dx$
+\item se $f$ \`e derivabile in $[0,2]$, allora $\exists c\in[0,2]$ tale che $f\prime(c)=\frac12\int_0^2 f(x)\,dx$
+\item se $f$ \`e continua in $[4,5]$, allora $\exists c\in[4,5]$ tale che $f(c)=\int_4^5 f(x)\,dx$
+\item se $f$ \`e continua in $[a,b]$, allora $\exists c\in[a,b]$ tale che $f(c)=\int_a^b f(x)\,dx$
+\item se $f$ \`e integrabile in $[a,b]$, allora $\exists c\in[a,b]$ tale che $f(c)=\int_a^b f(x)\,dx$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: Il teorema della media integrale per funzioni continue garantisce $f(c)=\frac1{5-4}\int_4^5 f=\int_4^5 f$. La sola integrabilit\`a non basta a garantire che il valor medio sia assunto.
+
+% Pag. originale 459/521
+\iffalse Pag. originale 459/521 \fi
+\begin{quiz}
+Sia $\displaystyle F(x)=\int_x^4\frac{t^2}{\cosh(t^2)}\,dt$. Allora:
+\begin{enumerate}
+\item $F$ \`e crescente su $(0,+\infty)$ e decrescente su $(-\infty,0)$
+\item $F$ \`e crescente su $\mathbb R$
+\item $F$ ha un minimo in $0$
+\item $F$ ha un massimo in $0$
+\item $F$ \`e decrescente su $\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: $F\prime(x)=-x^2/\cosh(x^2)\le0$ per ogni $x$, quindi $F$ \`e decrescente su $\mathbb R$.
+
+% Pag. originale 459/521
+\iffalse Pag. originale 459/521 \fi
+\begin{quiz}
+Sia $f$ continua su $[0,+\infty)$ e tale che $f(x)\le e^{-x}$ per ogni $x\ge0$. Allora necessariamente l\textquotesingle integrale improprio $\displaystyle\int_0^{+\infty}f(x)\,dx$:
+\begin{enumerate}
+\item \`e indeterminato
+\item diverge a $-\infty$
+\item converge
+\item converge, oppure diverge a $-\infty$
+\item nessuna delle precedenti risposte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 6.2
+% SPIEGAZIONE: Dato che $\int_0^{+\infty}e^{-x}dx$ converge, le parti positive di $f$ sono integrabili; la parte negativa pu\`o avere integrale finito o infinito, quindi il totale converge oppure tende a $-\infty$.
+
+% Pag. originale 459/521
+\iffalse Pag. originale 459/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione di classe $C^\infty$ tale che $f(x)\ge e^{2x}$ per ogni $x\in\mathbb R$. Allora:
+\begin{enumerate}
+\item $f\prime(0)=0$
+\item $f\prime\prime(0)\ge4$
+\item $f$ \`e convessa
+\item $f$ \`e crescente
+\item nessuna delle precedenti risposte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: La disuguaglianza sui valori non impone segni alle derivate: ad esempio $f(x)=e^{2x}+C+\sin(kx)$ con $C\ge1$ pu\`o avere derivata negativa e seconda derivata negativa in alcuni punti, scegliendo $k$ grande.
+Risposta completata
+

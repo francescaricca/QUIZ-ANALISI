@@ -1,0 +1,328 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 491-500 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine 491-500: spiegazioni 29a simulazione e 20 quiz della 30a simulazione.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+Siano $A$ e $B$ due insiemi, con $A$ e $B\subseteq\mathbb R$ e tali che $\sup A=\sup B=4$. Allora
+\begin{enumerate}
+\item $\forall\varepsilon>0\ \exists a\in A$ tale che $a\in B$
+\item $\exists\varepsilon>0$ tale che $\forall a\in A$ e $\forall b\in B\Rightarrow a,b\in(4-\varepsilon,4]$
+\item $\forall\varepsilon>0\ \exists b\in B$ tale che $b\in A$
+\item $\forall\varepsilon>0\ \exists a\in A$ e $\exists b\in B: a,b\in(4,4+\varepsilon)$
+\item $\forall\varepsilon>0\ \exists a\in A$ e $\exists b\in B: a,b\in(4-\varepsilon,4]$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 1.1
+% SPIEGAZIONE: Per definizione di estremo superiore, ogni intorno sinistro di $4$ contiene elementi di entrambi gli insiemi. Non occorre che $A$ e $B$ abbiano elementi comuni.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+Sia data la funzione $f:\mathbb R\to\mathbb R$, continua in $\mathbb R$ e derivabile in $\mathbb R$ eccetto al pi\`u in $x=2$ e tale che $\lim_{x\to2}f\prime(x)=5$; allora necessariamente
+\begin{enumerate}
+\item $f$ \`e continua, ma non derivabile
+\item $f$ \`e derivabile in $x=2$ con $f\prime(5)=2$
+\item $f$ potrebbe non essere derivabile in $x=2$
+\item $f$ \`e derivabile in $x=2$ con $f\prime(2)=5$
+\item non \`e possibile calcolare il limite del rapporto incrementale per $x\to2$, condizione necessaria per calcolare la derivata della funzione nel punto
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: Il teorema di prolungamento della derivata garantisce $f\prime(2)=\lim_{x\to2}f\prime(x)=5$, usando la continuit\`a in $2$.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+La retta tangente al grafico della funzione $f(x)=(x+1)-2(x+1)^2+\sinh(1+x)^3$ nel punto $x=-1$ \`e:
+\begin{enumerate}
+\item $y=-x$
+\item $y=x+1$
+\item $y=-x+1$
+\item $y=-1$
+\item $y=2x+1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: Ponendo $t=x+1$, $f=t-2t^2+O(t^3)$; $f(-1)=0$ e $f\prime(-1)=1$, quindi $y=x+1$.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+L' integrale $\displaystyle\int_{-\infty}^{+\infty}e^{-x^2}\,dx$
+\begin{enumerate}
+\item \`e integrabile per parti
+\item diverge positivamente
+\item converge ad un numero negativo
+\item converge a zero
+\item converge a un numero positivo
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: La funzione \`e positiva e, per $|x|\ge1$, $e^{-x^2}\le1/x^2$. Quindi l' integrale converge a un valore strettamente positivo.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+Dato $z=2+i$, allora $\omega=z^2-z=$
+\begin{enumerate}
+\item $1+i$
+\item $1-i$
+\item $1+3i$
+\item $4$
+\item nessuna delle altre risposte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: ATTENZIONE: la tabella ufficiale riporta E, ma $z^2=(2+i)^2=3+4i$, dunque $z^2-z=1+3i$: \`e corretta C. Anche la spiegazione ufficiale contiene un errore di calcolo.
+
+% Pag. originale 494/521
+\iffalse Pag. originale 494/521 \fi
+\begin{quiz}
+$y(t)=e^{4t}$ \`e soluzione dell' equazione differenziale
+\begin{enumerate}
+\item $y\prime\prime(t)=4t$
+\item $y\prime\prime(t)=4y$
+\item $y\prime=4xy$
+\item $y\prime\prime+4y\prime=0$
+\item $y\prime\prime=4y\prime$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: $y\prime=4e^{4t}$ e $y\prime\prime=16e^{4t}=4y\prime$.
+
+% Pag. originale 495/521
+\iffalse Pag. originale 495/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to0}\frac{5^x-1}{\sin4x}$
+\begin{enumerate}
+\item $1$
+\item $\dfrac{\log5}{4}$
+\item $\dfrac14$
+\item $\dfrac54$
+\item $5$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $5^x-1\sim x\log5$ e $\sin4x\sim4x$.
+
+% Pag. originale 495/521
+\iffalse Pag. originale 495/521 \fi
+\begin{quiz}
+Una funzione $f$ \`e continua in $x_0\in A=\operatorname{dom}f$ se:
+\begin{enumerate}
+\item \`e limitata in $x_0$
+\item $\lim_{x\to x_0}f(x)=l\in\mathbb R$
+\item $\lim_{x\to x_0^+}f(x)=\lim_{x\to x_0^-}f(x)=f(x_0)$
+\item $\forall\varepsilon>0\ \exists\delta>0:\ \forall x\in (|x-x_0|<\delta)\cap(\operatorname{dom}f)\Rightarrow |f(x)-f(x_0)|<\varepsilon$
+\item nessuna delle risposte precedenti
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.1
+% SPIEGAZIONE: La definizione $\varepsilon$--$\delta$ vale anche per punti isolati del dominio; la formulazione con limiti laterali no.
+
+% Pag. originale 495/521
+\iffalse Pag. originale 495/521 \fi
+\begin{quiz}
+Sia data una funzione $f$ crescente in $[a,b]$. Detto $I=\int_a^b f(x)\,dx$, quale delle seguenti affermazioni NON \`e necessariamente VERA?
+\begin{enumerate}
+\item $\exists\mu\in(f(a),f(b)):\mu=\dfrac{I}{b-a}$
+\item $(b-a)f(a)\le I\le(b-a)f(b)$
+\item $\exists c\in(a,b):f(c)=\dfrac{I}{b-a}$
+\item L' area della parte di piano compresa tra il grafico di $f(x)$, l' asse $x$ e le rette $x=a$, $x=b$ \`e $\displaystyle\int_a^b|f(x)|\,dx$
+\item $\exists\mu\in(f(a),f(b))\mid I=\mu(b-a)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.2
+% SPIEGAZIONE: La media integrale non deve essere assunta dalla funzione se manca la continuit\`a. ATTENZIONE: per una funzione costante anche A ed E falliscono, poich\'e $(f(a),f(b))$ \`e vuoto; il quesito richiederebbe ipotesi aggiuntive.
+
+% Pag. originale 495/521
+\iffalse Pag. originale 495/521 \fi
+\begin{quiz}
+In quali intervalli le due funzioni $f(x)=\log(x-1)-\log(x+1)$ e $g(x)=\log\dfrac{x-1}{x+1}$ coincidono?
+\begin{enumerate}
+\item $(-\infty,-1)$
+\item $(-1,1)$
+\item $(-\infty,-1)\cup(1,+\infty)$
+\item $[1,+\infty)$
+\item $(1,+\infty)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.1
+% SPIEGAZIONE: Entrambi i logaritmi di $f$ esistono soltanto per $x>1$, dove la propriet\`a $\log a-\log b=\log(a/b)$ vale.
+
+% Pag. originale 495/521
+\iffalse Pag. originale 495/521 \fi
+\begin{quiz}
+Sia $f(x)=1+3x+\arctan x$ e $f(0)=1$. Allora $(f^{-1})\prime(1)=$
+\begin{enumerate}
+\item $3$
+\item $4$
+\item $1$
+\item $\dfrac27$
+\item $\dfrac14$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: $f\prime(0)=3+1=4$ e $f^{-1}(1)=0$; dunque $(f^{-1})\prime(1)=1/4$.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+La parte principale, per $x\to0$, della funzione $f(x)=x+\sqrt{x^2+x^4}$ \`e:
+\begin{enumerate}
+\item $x\to0^+:2x;\quad x\to0^-:-\dfrac12x^3$
+\item $2x$
+\item $\dfrac12x^3$
+\item $x$
+\item $|x|$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $\sqrt{x^2+x^4}=|x|\sqrt{1+x^2}$. Per $x>0$ si ha $2x+O(x^3)$; per $x<0$, $x-x(1+x^2/2+O(x^4))=-x^3/2+O(x^5)$.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+Sia data la successione $a_n=\dfrac{\log n+1}{n^2+4}\cos\left(n\dfrac\pi2\right)$
+\begin{enumerate}
+\item \`e indeterminata
+\item \`e a termini definitivamente positivi
+\item diverge positivamente
+\item converge a zero
+\item diverge a meno infinito
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $|a_n|\le(\log n+1)/(n^2+4)\to0$; si applica il teorema del confronto.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+Siano date due funzioni, derivabili almeno una volta, che soddisfano alle condizioni $f(0)=g(0)$ e $f(5)=g(5)$. Allora
+\begin{enumerate}
+\item $\exists c\in(0,5):f\prime(c)=g\prime(c)=0$
+\item $\exists c\in(0,5):f(c)=5$ e $g\prime(c)=0$
+\item $\exists c\in(0,5):g(c)=5$ e $f(c)=0$
+\item nessuna delle altre risposte \`e corretta
+\item $\nexists c_1,c_2\in(0,5):f\prime(c_1)=g\prime(c_2)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: ATTENZIONE: la tabella ufficiale indica A, ma Rolle applicato a $h=f-g$ assicura soltanto $f\prime(c)=g\prime(c)$, non che entrambe siano zero. Controesempio: $f=g=x$, con derivate sempre uguali a $1$. D \`e corretta.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+Sia $f(x)=(2-x)(x-5)\arctan x$. Quale delle seguenti affermazioni NON \`e necessariamente VERA?
+\begin{enumerate}
+\item $\exists c\in(0,2):f\prime(c)=0$
+\item soddisfa le ipotesi del teorema di Lagrange in $[2,5]$
+\item $\exists c\in(2,5):f\prime(c)=0$
+\item $\exists c\in(0,1):f\prime(c)=-\pi$
+\item $\displaystyle\int_0^1 f(x)\,dx>0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: In $(0,1)$, $(2-x)>0$, $(x-5)<0$ e $\arctan x>0$, quindi $f(x)<0$ e l' integrale \`e negativo. Rolle assicura A e C; Lagrange su $[0,1]$ assicura D.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+Sia data la funzione $\displaystyle f(x)=\begin{cases}\cos x&x\ge0,\\a+x^2&x<0.\end{cases}$ Allora
+\begin{enumerate}
+\item $f(x)$, se $a=1$, \`e derivabile in $x=0$ e $f\prime(0)=0$
+\item $f(x)$ \`e derivabile in $x=0$ $\forall a\in\mathbb R$ e $f\prime(0)=0$
+\item $f(x)$ ha un punto di minimo in $x=0$
+\item $f(x)$ non \`e derivabile in $x=0$
+\item $f(x)$ \`e limitata
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.2
+% SPIEGAZIONE: La continuit\`a in $0$ impone $a=1$; in quel caso le derivate laterali sono entrambe zero. La funzione non \`e globalmente limitata a sinistra.
+
+% Pag. originale 496/521
+\iffalse Pag. originale 496/521 \fi
+\begin{quiz}
+Sia data la funzione $f(x)=3x+7+\dfrac{9\sin x+1}{x^2+1}$ e sia $g(x)=3x+7$ il suo asintoto obliquo. Allora
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to+\infty}(f(x)-g(x))=9$
+\item $\displaystyle\lim_{x\to+\infty}\frac{f(x)-g(x)}x=4$
+\item $f(x)\cdot g(x)\sim x$
+\item $f(x)\sim g(x)$, $x\to+\infty$
+\item nessuna delle precedenti affermazioni
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $f-g=(9\sin x+1)/(x^2+1)\to0$; poich\'e $g(x)\to+\infty$, segue $f/g\to1$.
+
+% Pag. originale 497/521
+\iffalse Pag. originale 497/521 \fi
+\begin{quiz}
+Sia data una funzione $f(x)$ tale che $f(x)\ge x$, $\forall x\in\mathbb R$. Allora
+\begin{enumerate}
+\item $\forall x\in[-\frac12,1]$ $f(x)$ \`e positiva
+\item $\forall x\in[-1,0]$ $f(x)$ \`e negativa
+\item $\displaystyle\int_{-1}^1f(x)\,dx=0$
+\item $\displaystyle\int_0^1f(x)\,dx=\frac12$
+\item detto $\mu$ il valor medio integrale, con $x\in[0,1]$: $\mu\ge\frac12$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 5.2
+% SPIEGAZIONE: Integrando $f(x)\ge x$ su $[0,1]$ si ottiene $\int_0^1f(x)\,dx\ge1/2$, e la lunghezza dell' intervallo \`e $1$.
+
+% Pag. originale 497/521
+\iffalse Pag. originale 497/521 \fi
+\begin{quiz}
+L' integrale improprio $\displaystyle\int_{-\infty}^{-1}\sin x\,e^x\,dx$
+\begin{enumerate}
+\item converge a zero
+\item converge assolutamente, ma non semplicemente
+\item nessuna delle altre
+\item diverge negativamente
+\item converge semplicemente
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: $|\sin x\,e^x|\le e^x$ e $\int_{-\infty}^{-1}e^x\,dx=e^{-1}<\infty$, dunque converge assolutamente e anche semplicemente. L' alternativa B \`e falsa.
+
+% Pag. originale 497/521
+\iffalse Pag. originale 497/521 \fi
+\begin{quiz}
+Data la funzione $\displaystyle f(x)=\begin{cases}x&-1<x<0,\\\sin\pi x&0<x<1,\end{cases}$ quale delle seguenti affermazioni \`e vera?
+\begin{enumerate}
+\item la funzione \`e continua e derivabile in $(-1,1)$
+\item l' area della parte di piano racchiusa tra il grafico della funzione e l' asse $x$ si pu\`o calcolare con $\displaystyle\int_{-1}^1f(x)\,dx$
+\item il valor medio integrale della funzione nell' intervallo $(-1,1)$ si ottiene $\displaystyle\int_{-1}^0x\,dx+\int_0^1\sin\pi x\,dx$
+\item detto $\mu$ il valor medio integrale di $f$ con $x\in(-1,1)$, $\exists c\in(-1,0)$ tale che $f(c)=\mu$
+\item nessuna delle altre risposte
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 5.2
+% SPIEGAZIONE: $f$ non \`e definita in $0$; l' area richiede $|f|$ e la media richiede il fattore $1/2$. Inoltre $\mu=(-1/2+2/\pi)/2>0$, mentre $f(x)<0$ su $(-1,0)$.
+Risposta completata

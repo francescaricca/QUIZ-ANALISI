@@ -1,0 +1,523 @@
+% Trascrizione quiz Paola Suria: intervallo pagine del PDF.
+% Ogni risposta e spiegazione e` conservata nei commenti % SOLUZIONE,
+% per non alterare il parser del sito esistente.
+% ATTENZIONE: verificare le voci segnalate come da verificare.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 21/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 17 (pagina 21)
+\begin{quiz}
+Il polinomio di Taylor di II grado, con centro $x=1$, della funzione $f(x)=e^{-x^2/3}$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\frac13e^{-1/3}(3-4(x-1)+\frac53(x-1)^2)$
+\item $\frac13e^{-1/3}(3-2(x-1)-\frac13(x-1)^2)$
+\item $\frac13e^{-1/3}(9-2(x-1)-\frac79(x-1)^2)$
+\item $\frac13e^{-1/3}(9-4(x-1)-\frac19(x-1)^2)$
+\item $\frac13e^{1/3}(9-4(x-1)-\frac19(x-1)^2)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: $f(1)=e^{-1/3}$, $f\prime(1)=-2e^{-1/3}/3$, $f\prime\prime(1)=-2e^{-1/3}/9$, dunque il coefficiente quadratico \`e $-e^{-1/3}/9$.
+
+% SIMULAZIONE / QUESITO 18 (pagina 21)
+\begin{quiz}
+La funzione $f:\mathbb R\setminus\{-1\}\to\mathbb R$, $f(x)=\dfrac{e^{-3x^2}}{4x+4}$ \`e crescente in
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $(-\infty,-1)$
+\item $(-\frac1{2\sqrt3},1+\frac1{2\sqrt3})$
+\item $(-\frac12-\frac1{2\sqrt3},-\frac12+\frac1{2\sqrt3})$
+\item $(-1,+\infty)$
+\item $(-\frac12-\frac1{2\sqrt3},-1)\cup(-1,-\frac12+\frac1{2\sqrt3})$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: $f\prime$ ha segno di $-6x(x+1)-1$; \`e positivo tra le radici $(-3\pm\sqrt3)/6$. Attenzione: l\'intervallo attraversa $x=-1$? No, entrambe le radici sono maggiori di $-1$.
+
+% SIMULAZIONE / QUESITO 19 (pagina 21)
+\begin{quiz}
+Quali sono i valori massimo e minimo della funzione $f(x)=x^3-6x^2+9x+1$ nell\'intervallo $[-2,2]$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item max $=1$, min $=-3$
+\item max $=6$, min $=-21$
+\item max $=23$, min $=-4$
+\item max $=5$, min $=-49$
+\item max $=51$, min $=-3$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: $f\prime=3(x-1)(x-3)$: nell\'intervallo il punto critico \`e $1$. $f(-2)=-49$, $f(1)=5$, $f(2)=3$.
+
+% SIMULAZIONE / QUESITO 20 (pagina 21)
+\begin{quiz}
+Lo sviluppo di Mac Laurin di ordine 4 della funzione $f(x)=e^{\cosh x}$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $(1+\frac{x^2}2+\frac{x^4}{4!})+\frac12(1+\frac{x^2}2+\frac{x^4}{4!})^2+\frac1{3!}(1+\frac{x^2}2+\frac{x^4}{4!})^3+\frac1{4!}(1+\frac{x^2}2+\frac{x^4}{4!})^4+o(x^4)$
+\item $e(1+\frac12x^2+\frac1{4!}x^4)+o(x^4)$
+\item $e(1+\frac12x^2+\frac16x^4)+o(x^4)$
+\item $1+\frac12x^2+\frac1{4!}x^4+o(x^4)$
+\item $1+\frac12x^2+\frac16x^4+o(x^4)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: $\cosh x=1+x^2/2+x^4/24+o(x^4)$; $e^{\cosh x}=e[1+x^2/2+(1/24+1/8)x^4]+o(x^4)$.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 23/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 1 (pagina 23)
+\begin{quiz}
+Sia $z$ un numero complesso diverso da zero. Quale delle seguenti affermazioni \`e FALSA?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\arg(z^4)=4\arg(z)$
+\item $|z^n|=|z|^n$
+\item $z$ pu\`o avere meno di quattro radici quarte
+\item $z+\overline z\in\mathbb R$
+\item $z\overline z\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: Ogni complesso non nullo ha esattamente quattro radici quarte distinte. La formula degli argomenti si intende modulo $2\pi$.
+
+% SIMULAZIONE / QUESITO 2 (pagina 23)
+\begin{quiz}
+Il dominio della funzione $f(x)=\log_2\!\left(\dfrac{\sqrt{1-x^2}}{x+4}\right)$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $(-\infty,-1)\cup(1,+\infty)$
+\item $(-2,-1)\cup(1,2)$
+\item $\mathbb R$
+\item $[-1,1]$
+\item $(-1,1)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: Il radicando deve essere strettamente positivo, $1-x^2>0$, e $x+4>0$.
+
+% SIMULAZIONE / QUESITO 3 (pagina 23)
+\begin{quiz}
+Sia data l\'equazione $x^{49}+4x-10=0$. Quale delle seguenti affermazioni \`e FALSA?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item l'equazione ammette una sola radice reale
+\item l'equazione ammette 49 radici in $\mathbb C$
+\item tra le 49 radici in $\mathbb C$, 48 sono a due a due complesse coniugate
+\item la radice reale \`e positiva
+\item le radici dell'equazione sono i vertici di un poligono di 49 lati inscritti in una circonferenza
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: $49x^{48}+4>0$, quindi esiste un solo zero reale, positivo. Le radici non sono in generale equidistanti su una circonferenza.
+
+% SIMULAZIONE / QUESITO 4 (pagina 23)
+\begin{quiz}
+Una primitiva della funzione $f(x)=\dfrac1{(x-5)^2}$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $F(x)=\frac{x-4}{5-x}$, $x\in I=(5,+\infty)$
+\item $F(x)=\frac{x-4}{5-x}$, $x\in I=\mathbb R\setminus\{5\}$
+\item $F(x)=\frac1{x-5}+x$, $x\in I=(-\infty,5)$
+\item $F(x)=\frac{x}{5-x}$, $x\in I=(5,+\infty)$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: a
+% SPIEGAZIONE: $\frac{x-4}{5-x}=-1-\frac1{x-5}$ e la derivata \`e $1/(x-5)^2$.
+
+% SIMULAZIONE / QUESITO 5 (pagina 23)
+\begin{quiz}
+La derivata della funzione $f(x)=2^{\cos(\pi x)}$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $-\pi\sin(\pi x)\,2^{\cos(\pi x)}$
+\item $-\log2\sin(\pi x)\,2^{\cos(\pi x)}$
+\item $-\pi\log2\sin(\pi x)\,2^{\cos(\pi x)}$
+\item $-\pi\log2\,2^{\cos(\pi x)}$
+\item $2^{\cos(\pi x)}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: Per $a^{u(x)}$, la derivata \`e $a^{u(x)}\log(a)u\prime(x)$.
+
+% SIMULAZIONE / QUESITO 6 (pagina 23)
+\begin{quiz}
+Quale delle seguenti propriet\`a NON \`e soddisfatta da $z=2+3i$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $z\overline z\in\mathbb R$
+\item $z+\overline z\in\mathbb R$
+\item $z-\overline z$ \`e un numero immaginario
+\item $|z|z\in\mathbb R$
+\item $z^2-6iz\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: $|z|z=\sqrt{13}(2+3i)$ non \`e reale.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 24/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 7 (pagina 24)
+\begin{quiz}
+$\left(\frac12+\frac{\sqrt3}{2}i\right)^9=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $i$
+\item $-i$
+\item $\frac12+\frac{\sqrt3}2i$
+\item $1$
+\item $-1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: La base \`e $e^{i\pi/3}$; elevando alla nona si ottiene $e^{i3\pi}=-1$.
+
+% SIMULAZIONE / QUESITO 8 (pagina 24)
+\begin{quiz}
+Lo sviluppo di Mac Laurin di ordine 2 della funzione $f(x)=3^{2\sin x}$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $1+2x\log3+2x^2\log^23$
+\item $1+2x\log3+2x^2\log3+o(x^2)$
+\item $3+2x\log3+2x^2\log^23$
+\item $1+2x\log3+2x^2\log^23+o(x^2)$
+\item $2x\log3+2x^2\log^23+o(x^2)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: $3^{2\sin x}=e^{2\log3(x+o(x^2))}=1+2x\log3+2x^2\log^23+o(x^2)$.
+
+% SIMULAZIONE / QUESITO 9 (pagina 24)
+\begin{quiz}
+Quale delle seguenti propriet\`a \`e soddisfatta dal numero complesso $z=\dfrac{1-i}{1+i}$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $z=\sqrt2e^{-i\pi/4}$
+\item $z^2=-2i$
+\item $z^4=-4$
+\item $\operatorname{Re}(z)=1$
+\item $z=-i$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: Moltiplicando per $1-i$ si ottiene $z=(1-i)^2/2=-i$.
+
+% SIMULAZIONE / QUESITO 10 (pagina 24)
+\begin{quiz}
+Sia data la funzione $f(x)=(x+1)(x-1)(x-4)$. Quanti punti critici ha $g(x)=\cos f(x)$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item almeno 5
+\item $5$
+\item meno di 5
+\item $3$
+\item non \`e possibile saperlo
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: a
+% SPIEGAZIONE: $g\prime=-\sin(f)f\prime$: i tre zeri di $f$ e i due zeri distinti di $f\prime$ forniscono almeno cinque punti critici.
+
+% SIMULAZIONE / QUESITO 11 (pagina 24)
+\begin{quiz}
+Se $g:\mathbb R\to\mathbb R$ \`e derivabile con $\lim_{x\to-\infty}g(x)=0$ e $\lim_{x\to+\infty}g(x)=0$, allora
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $g(x)<1$, $x<0$
+\item $g(x)<1$, $x>0$
+\item $\exists x_0\in\mathbb R$ tale che $g\prime(x_0)=0$
+\item $f(x)>0$ per ogni $x\in\mathbb R$
+\item $\exists x_0\in\mathbb R$ tale che $g(x_0)=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: Applicando Rolle a due punti con lo stesso valore, oppure usando un estremo interno quando $g$ non \`e costante, si trova $g\prime(x_0)=0$.
+
+% SIMULAZIONE / QUESITO 12 (pagina 24)
+\begin{quiz}
+$\displaystyle\lim_{x\to0^+}\frac{\sqrt{x}-2e^x\sin x}{\log(1+x^2)-\sqrt{4x}}=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $-1$
+\item $1$
+\item $2$
+\item $1/2$
+\item $-1/2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: Per $x\to0^+$, $2e^x\sin x=O(x)=o(\sqrt{x})$ e $\log(1+x^2)=O(x^2)=o(\sqrt{x})$. Inoltre $\sqrt{4x}=2\sqrt{x}$, quindi il rapporto tende a $\sqrt{x}/(-2\sqrt{x})=-1/2$.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 25/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 13 (pagina 25)
+\begin{quiz}
+Sia data la funzione $f(x)=2x^3+3e^{2x}$. Allora $(f^{-1})\prime(3)=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $1/8$
+\item $-1/8$
+\item $1/6$
+\item $-1/6$
+\item $1/(54+e^6)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: $f(0)=3$, $f\prime(0)=6$, quindi $(f^{-1})\prime(3)=1/6$.
+
+% SIMULAZIONE / QUESITO 14 (pagina 25)
+\begin{quiz}
+Se $f(x)=|\cos(\pi x)|^3+2|x|$, allora $f\prime(1)=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $-1$
+\item $1$
+\item $2$
+\item $3$
+\item non esiste
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: Vicino a $x=1$ il termine $|\cos(\pi x)|^3$ ha derivata nulla nel punto, mentre $2|x|$ ha derivata $2$.
+
+% SIMULAZIONE / QUESITO 15 (pagina 25)
+\begin{quiz}
+Se $\lim_{n\to+\infty}(|a_n|+|b_n|)=0$, quale delle seguenti affermazioni \`e sicuramente vera?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\lim a_n=\lim b_n=0$
+\item $\lim a_n=1$, $\lim b_n=-1$
+\item $\lim a_n=0$, $\lim b_n=+\infty$
+\item nessuna delle altre risposte \`e corretta
+\item $\lim a_n=+\infty$, $\lim b_n=-\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: a
+% SPIEGAZIONE: Entrambi gli addendi sono non negativi, dunque ciascuno tende a zero.
+
+% SIMULAZIONE / QUESITO 16 (pagina 25)
+\begin{quiz}
+$\displaystyle\int x(2-3x^2)^5\,dx=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\frac1{36}(2-3x^2)^6+C$
+\item $\frac1{36}(3x^2-2)^6+C$
+\item $\frac16(2-3x^2)^6+C$
+\item $-\frac1{36}(2-3x^2)^6+C$
+\item $-\frac1{36}(2-3x^2)^5+C$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: Con $u=2-3x^2$, $du=-6x\,dx$, perci\`o l\'integrale \`e $-u^6/36+C$.
+
+% SIMULAZIONE / QUESITO 17 (pagina 25)
+\begin{quiz}
+$f(x)=\cos x$ \`e soluzione dell\'equazione differenziale:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $(y\prime)^2-y^2=1$
+\item $y\prime\prime\prime+y=0$
+\item $y\prime\prime-y=0$
+\item $(y\prime)^2+y^2=1$
+\item $y\prime\prime-2y=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: $y\prime=-\sin x$, quindi $\sin^2x+\cos^2x=1$.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 26/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 18 (pagina 26)
+\begin{quiz}
+Quale delle seguenti funzioni NON \`e una primitiva della funzione $\dfrac{2x}{3x^2+3}$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $F(x)=\frac13\log(3x^2+3)$, $x\in\mathbb R$
+\item $F(x)=\frac13\log(9(x^2+1))$, $x\in\mathbb R$
+\item $F(x)=\frac13\log(x^2+1)+1$, $x\in\mathbb R^+$
+\item $F(x)=\frac13\log(x^2+1)$, $x\in\mathbb R$
+\item $F(x)=\frac13\log\left(\frac{x^2+1}{2x}\right)$, $x\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: La (e) non \`e definita su tutta $\mathbb R$ e la sua derivata include $-1/(3x)$.
+
+% SIMULAZIONE / QUESITO 19 (pagina 26)
+\begin{quiz}
+Sia $f(x)$ una funzione non identicamente nulla e $f\prime(x)$ la sua derivata. Quale delle seguenti affermazioni \`e SBAGLIATA?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\int\frac{f\prime(x)}{f(x)}dx=\log|f(x)|$
+\item $\int\frac{f\prime(x)}{f(x)}dx=2\log|f(x)|$
+\item $\int\frac{f\prime(x)}{f(x)}dx=\log(e^3|f(x)|)$
+\item $\int\frac{f\prime(x)}{f(x)}dx=\log(|f(x)|\sin(\pi/6))$
+\item $\int\frac{f\prime(x)}{f(x)}dx=\log(2|f(x)|)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: Una primitiva \`e $\log|f(x)|+C$ dove $f\ne0$; moltiplicare il logaritmo per $2$ ne raddoppia la derivata.
+
+% SIMULAZIONE / QUESITO 20 (pagina 26)
+\begin{quiz}
+Quale delle seguenti propriet\`a \`e FALSA?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\sqrt[3]{-i}=e^{i(-\pi/6+2k\pi/3)}$, $k=0,1,2$
+\item le tre radici cubiche di $-i$ sono vertici di un triangolo equilatero sulla circonferenza unitaria
+\item una delle radici cubiche di $-i$ \`e $w=i$
+\item due delle radici cubiche di $-i$ sono tra loro complesse coniugate
+\item $(-\frac{\sqrt3}{2}-\frac12i)^3=-i$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: Le radici hanno argomenti $-\pi/6$, $\pi/2$, $7\pi/6$: nessuna coppia \`e coniugata.
+
+% SIMULAZIONE / QUESITO 21 (pagina 26)
+\begin{quiz}
+Quale delle seguenti funzioni NON \`e una primitiva di $f(x)=1/x$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $F(x)=\log x$ in $I=(0,+\infty)$
+\item $F(x)=\log(x/3)$ in $I=(0,+\infty)$
+\item $F(x)=\log(-x)$ in $I=(-\infty,0)$
+\item $F(x)=\log|x|$ in $I=\mathbb R\setminus\{0\}$
+\item $F(x)=\log(-3x)$ in $I=(-\infty,0)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: Il testo usa la definizione di primitiva su un intervallo: $\mathbb R\setminus\{0\}$ non \`e un intervallo, pur essendo la derivata $1/x$ su ciascuna componente.
+
+% SIMULAZIONE / QUESITO 22 (pagina 26)
+\begin{quiz}
+Quale delle seguenti affermazioni NON \`e soddisfatta dalle due funzioni $F(x)=\arctan x$ e $G(x)=-\arctan(1/x)$?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $F$ e $G$ sono primitive della stessa funzione sullo stesso intervallo $I$
+\item $F(x)=G(x)+\pi/2$, $x\in(0,+\infty)$
+\item $F(x)=G(x)-\pi/2$, $x\in(-\infty,0)$
+\item $F$ e $G$ differiscono per una costante additiva che dipende dall'intervallo $I$
+\item $F(x)=G(x)+\pi/2$, $x\in\mathbb R\setminus\{0\}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: La costante \`e $\pi/2$ per $x>0$ e $-\pi/2$ per $x<0$, quindi non \`e unica su $\mathbb R\setminus\{0\}$.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 29/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 1 (pagina 29)
+\begin{quiz}
+Siano date due funzioni $f,g:\mathbb R\to\mathbb R$ derivabili con $f(0)=g(0)$ e $f(6)=g(6)$. Quale affermazione \`e necessariamente corretta?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\nexists c\in(0,6):f\prime(c)=g\prime(c)=0$
+\item $\exists c_1,c_2\in(0,6):f\prime(c_1)=g\prime(c_2)$
+\item $\exists c\in(0,6):f\prime(c)=g\prime(c)=0$
+\item le funzioni su $[0,6]$ non ammettono massimo e minimo assoluto
+\item le immagini delle due funzioni su $[0,6]$ sono uguali
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: Per Rolle applicato a $f-g$ esiste $c$ con $f\prime(c)=g\prime(c)$; basta prendere $c_1=c_2=c$.
+
+% SIMULAZIONE / QUESITO 2 (pagina 29)
+\begin{quiz}
+Lo sviluppo di MacLaurin di ordine 4 della funzione $f(x)=\dfrac{\sqrt[3]{1+x^4}}{\sqrt[4]{1+x^3}}$ \`e:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $1-\frac{x^2}2+\frac{x^3}3+o(x^4)$
+\item $1-\frac{x^3}4+\frac{x^4}3+o(x^4)$
+\item $-\frac{x^3}2+\frac{x^4}3+o(x^4)$
+\item $1+\frac{x^3}2+\frac{x^4}3+o(x^4)$
+\item $1-\frac{x^3}2-\frac{x^4}3+o(x^4)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: $(1+x^4)^{1/3}=1+x^4/3+o(x^4)$, $(1+x^3)^{-1/4}=1-x^3/4+o(x^4)$.
+
+% SIMULAZIONE / QUESITO 3 (pagina 29)
+\begin{quiz}
+Sia data la successione $a_n=n\sin(\frac\pi2n)$. Quale affermazione \`e vera?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item diverge a $-\infty$
+\item diverge oscillando
+\item converge a zero
+\item $\lim_{n\to+\infty}a_n=+\infty$
+\item \`e indeterminata perch'e il limite non esiste
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: $\sin(\pi n/2)$ assume ciclicamente $1,0,-1,0$, quindi la successione diverge oscillando e non ha limite.
+
+% SIMULAZIONE / QUESITO 4 (pagina 29)
+\begin{quiz}
+Sia data la funzione $f(x)=2^{\cos x}$. Quale affermazione \`e vera?
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item la funzione non \`e periodica
+\item $\lim_{x\to+\infty}f(x)=+\infty$
+\item la funzione si annulla infinite volte
+\item l'insieme immagine \`e $[0,+\infty)$
+\item la funzione \`e limitata
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: Poich\'e $-1\le\cos x\le1$, si ha $1/2\le2^{\cos x}\le2$.
+
+% SIMULAZIONE / QUESITO 5 (pagina 29)
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ derivabile in $0$ e $f(0)=0$. Il rapporto incrementale della funzione $f^3(x)$ in $0$ vale:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\bigl(\frac{f(x)-f(0)}x\bigr)^2$
+\item $\frac{f(x^3)}{x^2}$
+\item $\frac{f^3(x)}x$
+\item $\frac{f(x^3)}x$
+\item $3f^2(x)f\prime(x)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: Per definizione $[f(x)^3-f(0)^3]/(x-0)=f(x)^3/x$.
+
+\par\noindent\hfill{\color{cyan!65!black}\scriptsize Pag. originale 30/521}\par\smallskip
+
+% SIMULAZIONE / QUESITO 6 (pagina 30)
+\begin{quiz}
+Il numero complesso $z=i^7(2-3i)^2$ vale:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $12-7i$
+\item $12+5i$
+\item $-6+5i$
+\item $5+6i$
+\item $-12+5i$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: e
+% SPIEGAZIONE: $(2-3i)^2=-5-12i$ e $i^7=-i$, quindi $(-i)(-5-12i)=-12+5i$. L\'opzione corretta \`e (e), non (a).
+
+% SIMULAZIONE / QUESITO 7 (pagina 30)
+\begin{quiz}
+$\displaystyle\int_1^{+\infty}\frac3{x^3}\,dx=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $+\infty$
+\item $3/2$
+\item $-\infty$
+\item $2/3$
+\item $1/2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: b
+% SPIEGAZIONE: $\int_1^{+\infty}3x^{-3}dx=[-3/(2x^2)]_1^{+\infty}=3/2$.
+
+% SIMULAZIONE / QUESITO 8 (pagina 30)
+\begin{quiz}
+Una delle risposte \`e FALSA, quale? $\displaystyle\int_0^{\pi/4}\tan x\,dx=$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $-\log(\sqrt2/2)$
+\item $\log(2/\sqrt2)$
+\item $-\log(1/\sqrt2)$
+\item $\log2$
+\item $\frac12\log2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: d
+% SPIEGAZIONE: L\'integrale \`e $-\log(\cos\pi/4)=\frac12\log2$; (d) vale il doppio.
+
+% SIMULAZIONE / QUESITO 9 (pagina 30)
+\begin{quiz}
+$\displaystyle\lim_{x\to0}\frac{\sqrt[3]{1+3x}-1}{7x+20x^4}$
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $1/7$
+\item $3/7$
+\item $1/21$
+\item $0$
+\item $+\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: a
+% SPIEGAZIONE: $\sqrt[3]{1+3x}=1+x+o(x)$, quindi il rapporto tende a $1/7$.
+
+% SIMULAZIONE / QUESITO 10 (pagina 30)
+\begin{quiz}
+Se $f(x)=o(x^2)$ per $x\to0$, allora necessariamente:
+\begin{enumerate}[label=\alph*),leftmargin=1.3cm,itemsep=3pt,topsep=5pt]
+\item $\lim_{x\to0}f(x)/x^3=0$
+\item $\lim_{x\to0}2f(x)/(x^2+3x^3)=1$
+\item $\lim_{x\to0}f(x)/x=0$
+\item $\lim_{x\to+\infty}f(x)/x=0$
+\item $\lim_{x\to0}f(x)/\sqrt{x}=+\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: c
+% SPIEGAZIONE: $f(x)/x=[f(x)/x^2]x\to0$.
+Risposta completata

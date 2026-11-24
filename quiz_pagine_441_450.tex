@@ -1,0 +1,458 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 441-450 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine originali 441-450: test di prova gennaio 2012 (20 quesiti), ancora un test (8 quesiti).
+% Pagina 441 contiene consigli della simulazione precedente.
+% Pagine 445-448 contengono consigli/soluzioni, senza nuovi quesiti.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia $f(x)$ una funzione crescente su $[-1,2]$. \`E vero che:
+\begin{enumerate}
+\item $f$ non \`e necessariamente limitata su $[-1,2]$
+\item Esiste almeno un $x\in[-1,2]$ tale che $f(x)<f(-1)$
+\item Esiste almeno un $x\in[-1,2]$ tale che $f(x)>f(2)$
+\item $f([-1,2])\subseteq[f(-1),f(2)]$
+\item $f([-1,2])=[f(-1),f(2)]$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Per monotonia $f(-1)\le f(x)\le f(2)$; la continuit\`a non \`e garantita, quindi non necessariamente si assumono tutti i valori intermedi.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Il polinomio di MacLaurin di grado $4$ di $f(x)=\sin^2(3x)+x^3$ \`e
+\begin{enumerate}
+\item $9x^2+x^3-27x^4$
+\item $9x^2+x^3+27x^4$
+\item $3x^2+x^3-27x^4$
+\item $3x^2+x^3-x^4$
+\item $9x^2-27x^4$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $\sin^2 t=t^2-t^4/3+o(t^4)$, dunque $\sin^2(3x)=9x^2-27x^4+o(x^4)$.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia data la funzione $f(x)=\cos^2(\tan x)$. \`E FALSO che:
+\begin{enumerate}
+\item $f$ ha periodo minimo $\pi$
+\item \`e dispari
+\item $f$ \`e limitata
+\item $\operatorname{Im} f\subseteq[0,1]$
+\item $f$ \`e continua nel suo dominio
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.4
+% SPIEGAZIONE: $\tan(-x)=-\tan x$ e $\cos^2$ \`e pari, quindi $f$ \`e pari e non dispari.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Una primitiva di $f(x)=\dfrac{2x^3}{(2+x^4)^2+1}$ \`e
+\begin{enumerate}
+\item $\arctan[(2+x^4)^2+1]$
+\item $\frac12\arctan(2+x^4)$
+\item $\frac12\log[(2+x^4)^2+1]$
+\item $\arctan(2+x^4)$
+\item $\frac12\log(2+x^4)^2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: Pongo $u=2+x^4$, $du=4x^3dx$: $\int 2x^3/(u^2+1)dx=\frac12\arctan u+C$.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia $f(x)=\log(x+1)-2e^{3x}$. Osservando che $f(0)=-2$, possiamo dedurre che:
+\begin{enumerate}
+\item $(f^{-1})\prime(-2)=-5$
+\item $(f^{-1})\prime(0)=-5$
+\item $(f^{-1})\prime(0)=1/5$
+\item $(f^{-1})\prime(-2)=-1/5$
+\item $(f^{-1})\prime(-2)=1/5$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $f\prime(0)=1-6=-5$; la derivata dell\'inversa nel valore $-2$ \`e $1/f\prime(0)=-1/5$.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Data una funzione $f$, dire quali fra le seguenti proposizioni \`e corretta:
+\begin{enumerate}
+\item Sia $f$ derivabile in $\mathbb R\setminus\{x_0\}$. Se esiste $\lim_{x\to x_0}f\prime(x)=m\in\mathbb R$, allora $f\prime(x_0)=m$
+\item Sia $f$ derivabile in $\mathbb R\setminus\{x_0\}$ e continua in $\{x_0\}$. Se esiste $\lim_{x\to x_0}f\prime(x)$, allora $f$ \`e derivabile in $x_0$
+\item Sia $f$ derivabile in $\mathbb R\setminus\{x_0\}$. Se esiste $\lim_{x\to x_0}f\prime(x)=+\infty$, allora $f$ ha un punto di flesso a tangente verticale in $x_0$
+\item Sia $f$ derivabile in $\mathbb R\setminus\{x_0\}$ e continua in $\{x_0\}$. Se esiste $\lim_{x\to x_0}f\prime(x)=m\in\mathbb R$, allora $f\prime(x_0)=m$
+\item Sia $f$ derivabile in $\mathbb R\setminus\{x_0\}$. Se esiste $\lim_{x\to x_0}f\prime(x)=\pm\infty$, allora $f$ ha una cuspide in $x_0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Teorema di prolungamento della derivata: continuit\`a nel punto e limite finito delle derivate implicano derivabilit\`a con tale derivata. Anche B, se il limite esiste in senso esteso, richiede precisazioni.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia $z=4+2i$. \`E vero che:
+\begin{enumerate}
+\item $\operatorname{Re}(i^5z)=\operatorname{Re}(i^5\overline z)$
+\item $\operatorname{Im}(i^5z)=\operatorname{Im}(i^5\overline z)$
+\item $i^5z=i^5\overline z$
+\item $i^5z=i\overline z$
+\item $z=i^2\overline z$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: $i^5=i$; $iz=-2+4i$ e $i\overline z=2+4i$, perci\`o le parti immaginarie coincidono. NOTA: nel PDF le opzioni C e D sono tipograficamente molto simili; verificare sul documento originale.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia $f(x)\sim e^{x^2}-1$ e $g(x)\sim\log(1-x^3)$ per $x\to0$. \`E vero che:
+\begin{enumerate}
+\item $f(x)\sim g(x)$ per $x\to0$
+\item $\lim_{x\to0}f(x)/g(x)=+\infty$
+\item $[f(x)]^2=o(g(x))$ per $x\to0$
+\item $g(x)=o([f(x)]^2)$ per $x\to0$
+\item $\lim_{x\to0}f(x)/g(x)=-\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $f\sim x^2$, $g\sim-x^3$; $f^2/g\sim-x\to0$. Le opzioni B ed E non valgono per limite bilatero.
+
+% Pag. originale 442/521
+\iffalse Pag. originale 442/521 \fi
+\begin{quiz}
+Sia dato il problema di Cauchy $\begin{cases}x\prime=\sqrt{t+2}\,(x^2-x+2)\\x(0)=1\end{cases}$. \`E vero che:
+\begin{enumerate}
+\item il problema dato non ha soluzioni
+\item $x(t)=1$ \`e soluzione del problema su $\mathbb R$
+\item $x(t)=1$ \`e soluzione del problema su $(-2,+\infty)$
+\item esiste una soluzione del problema, ma non \`e costante
+\item $x(t)=-1$ \`e soluzione del problema su $(-2,+\infty)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 6.2
+% SPIEGAZIONE: In $t=0$, $x\prime(0)=\sqrt2(1-1+2)=2\sqrt2\ne0$; esiste una soluzione locale per regolarit\`a del campo, non costante.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+La funzione $f(x)=2x-\cos(1/x)+2e^{-x}$
+\begin{enumerate}
+\item ha asintoto obliquo $y=2x-1$ per $x\to+\infty$
+\item ha asintoto obliquo $y=2x$ per $x\to+\infty$
+\item ha asintoto orizzontale $y=-1$ per $x\to+\infty$
+\item non ha limite per $x\to+\infty$
+\item \`e un infinito di ordine superiore a $1$ rispetto a $x$, per $x\to+\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.4
+% SPIEGAZIONE: $\cos(1/x)\to1$ ed $e^{-x}\to0$, dunque $f(x)-(2x-1)\to0$.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia $f(x)=\sqrt{x+1}\,\sin\log(x+1)$. \`E vero che:
+\begin{enumerate}
+\item $f\prime(x)=\dfrac{2\cos\log(x+1)+\sin\log(x+1)}{2\sqrt{x+1}}$
+\item $f\prime(x)=\dfrac{\cos\log(x+1)}{x+1}\sqrt{x+1}+\dfrac{2\sin\log(x+1)}{\sqrt{x+1}}$
+\item $f\prime(x)=\dfrac{\cos\log(x+1)+\sin\log(x+1)}{2\sqrt{x+1}}$
+\item $f\prime(x)=\dfrac{-2\cos\log(x+1)+\sin\log(x+1)}{2\sqrt{x+1}}$
+\item $f\prime(x)=\dfrac{\cos\log(x+1)}{x+1}\sqrt{x+1}+\dfrac{2\sin\log(x+1)}{2\sqrt{x+1}}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Regola del prodotto: $f\prime=\frac{\sin\log(x+1)}{2\sqrt{x+1}}+\frac{\cos\log(x+1)}{\sqrt{x+1}}$.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia $a_n=3(-1)^n n\sin(n^2+1)$. \`E vero che:
+\begin{enumerate}
+\item $\lim_{n\to+\infty}a_n=+\infty$
+\item $\sup\{|a_n|\}=+\infty$
+\item $\lim_{n\to+\infty}a_n$ esiste finito
+\item nessuna delle altre affermazioni \`e vera
+\item L\'insieme $\{a_n\}$ \`e limitato
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $|a_n|\le3n$ ma il fattore oscillante non impone limitatezza. La non limitatezza richiede un argomento sulla distribuzione dei valori $n^2+1$ modulo $2\pi$; non \`e una conseguenza del solo $|\sin|\le1$.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to0}\frac{x\cos x-x+x^3}{\tan x^3-x^4}$ \`e uguale a:
+\begin{enumerate}
+\item $2$
+\item $0$
+\item $-\infty$
+\item $1/2$
+\item $1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Numeratore $x(-x^2/2)+x^3=x^3/2+O(x^5)$, denominatore $x^3-x^4+o(x^4)$; rapporto $\to1/2$.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia $f$ una funzione di classe $C^\infty$ su $\mathbb R$, il cui polinomio di MacLaurin di grado $4$ \`e $P(x)=3-x^2+2x^3$. \`E vero che:
+\begin{enumerate}
+\item $x=0$ \`e un punto di minimo locale di $f$
+\item $f^{(4)}(0)\ne0$
+\item $f$ ha al pi\`u $3$ zeri
+\item $f\prime(0)\ne0$
+\item $x=0$ \`e un punto di massimo locale di $f$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: $f\prime(0)=0$, $f\prime\prime(0)=-2<0$: massimo locale stretto. Il coefficiente di $x^4$ \`e nullo.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia dato il problema di Cauchy $\begin{cases}y\prime=\arctan y+5y^3\\y(0)=y_0\end{cases}$. \`E vero che:
+\begin{enumerate}
+\item nessuna delle altre risposte \`e corretta
+\item la soluzione \`e strettamente crescente per ogni $y_0\in\mathbb R$
+\item la soluzione \`e strettamente crescente se e solo se $y_0>0$
+\item la soluzione \`e strettamente crescente se e solo se $y_0\ge0$
+\item la soluzione \`e strettamente crescente se e solo se $y_0<0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.3
+% SPIEGAZIONE: $h(y)=\arctan y+5y^3$ ha il segno di $y$; per $y_0>0$ la soluzione cresce nel suo intervallo di esistenza, per $y_0=0$ \`e costante.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia $f$ una funzione continua su $[a,b]$. \`E vero che esiste $c\in[a,b]$ tale che:
+\begin{enumerate}
+\item $f(c)=\dfrac1{a-b}\int_a^b f(x)\,dx$
+\item $f(c)=\dfrac1{b+a}\int_a^b f(x)\,dx$
+\item $f\prime(c)=\dfrac1{b-a}\int_a^b f(x)\,dx$
+\item $f\prime(c)=\dfrac1{b+a}\int_a^b f(x)\,dx$
+\item $f(c)=\dfrac1{b-a}\int_a^b f(x)\,dx$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 5.2
+% SPIEGAZIONE: Teorema della media integrale per $a<b$.
+
+% Pag. originale 443/521
+\iffalse Pag. originale 443/521 \fi
+\begin{quiz}
+Sia $f$ una funzione strettamente crescente e derivabile su $\mathbb R$. \`E FALSO che:
+\begin{enumerate}
+\item $f^{-1}$ \`e ovunque derivabile
+\item $f^{-1}$ \`e ovunque continua
+\item $f^{-1}$ \`e ovunque strettamente crescente
+\item $f$ \`e continua su $\mathbb R$
+\item possono esistere $\bar x\in\mathbb R$ tali che $f\prime(\bar x)\le0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: L\'inversa \`e continua e crescente sulla sua immagine ma pu\`o non essere derivabile (es. $f(x)=x^3$). ATTENZIONE: E \`e anch\'essa falsa nella forma $\le0$? Pu\`o valere $f\prime=0$ (es. $x^3$), quindi \`e vera.
+
+% Pag. originale 444/521
+\iffalse Pag. originale 444/521 \fi
+\begin{quiz}
+La funzione $f(x)=\dfrac{x\log(x+1)}{(x+1)^2}$ \`e tale che:
+\begin{enumerate}
+\item $f$ \`e integrabile secondo Riemann su $(-1,2]$
+\item l\'integrale improprio di $f$ su $[-1,2]$ \`e convergente
+\item nessuna delle altre risposte \`e corretta
+\item l\'integrale improprio di $f$ su $[-1,2]$ \`e divergente
+\item non \`e integrabile sugli intervalli $[a,2]\subseteq(-1,2]$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 5.5
+% SPIEGAZIONE: Per $u=x+1\to0^+$, $f\sim-\log u/u^2$, la cui primitiva diverge all\'estremo.
+
+% Pag. originale 444/521
+\iffalse Pag. originale 444/521 \fi
+\begin{quiz}
+Siano $f$ e $g$ due funzioni definite in $\mathbb R$ e tali che $f(x)\le g(x)$ per ogni $x\le1$. \`E vero che:
+\begin{enumerate}
+\item se esiste $\lim_{x\to1^-}f(x)=k$, allora esiste $\lim_{x\to1^-}g(x)=m\ge k$
+\item se esiste $\lim_{x\to1^-}f(x)=+\infty$, allora esiste $\lim_{x\to1^-}g(x)=+\infty$
+\item se esiste $\lim_{x\to1^-}g(x)=+\infty$, allora esiste $\lim_{x\to1^-}f(x)=+\infty$
+\item se esiste $\lim_{x\to1^-}g(x)=m$, allora esiste $\lim_{x\to1^-}f(x)=k\le m$
+\item esistono $\lim_{x\to1^-}f(x)=k$ e $\lim_{x\to1^-}g(x)=m$ e $k\ge m$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.1
+% SPIEGAZIONE: Confronto: $f\le g$ e $f\to+\infty$ impongono $g\to+\infty$.
+
+% Pag. originale 444/521
+\iffalse Pag. originale 444/521 \fi
+\begin{quiz}
+Sia $f(x)=\begin{cases}x^2-x&x\ge0\\x^2+x&x<0\end{cases}$. \`E vero che:
+\begin{enumerate}
+\item $f$ soddisfa le ipotesi del Teorema di Weierstrass su $[-1,1]$
+\item $f$ soddisfa le ipotesi del Teorema di Lagrange su $[-1,1]$
+\item $f$ soddisfa le ipotesi del Teorema di Rolle su $[-1,1]$
+\item $f$ soddisfa le ipotesi del Teorema degli zeri su $[-1,1]$
+\item $f$ non soddisfa le ipotesi del Teorema fondamentale del calcolo integrale su $[-1,1]$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $f$ \`e continua su $[-1,1]$ e quindi soddisfa Weierstrass; non \`e derivabile in $0$ ($f\prime_-(0)=1$, $f\prime_+(0)=-1$). NOTA: anche D risulta vera se per teorema degli zeri si intendono continuit\`a e valori agli estremi di segno opposto? Qui $f(-1)=f(1)=0$, quindi non di segno opposto.
+
+% Pag. originale 449/521
+\iffalse Pag. originale 449/521 \fi
+\begin{quiz}
+La successione $c_n=\left(\dfrac{n+6}{n}\right)^{2n}$ tende (per $n$ che tende ad infinito) a
+\begin{enumerate}
+\item $e$
+\item $\sqrt[12]{1/e}$
+\item $1$
+\item $0$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $c_n=(1+6/n)^{2n}\to e^{12}$, che non compare fra le prime quattro risposte.
+
+% Pag. originale 449/521
+\iffalse Pag. originale 449/521 \fi
+\begin{quiz}
+\`E data la successione $c_n=\dfrac{n^{10}+9^n}{n^{10}+10^n}$.
+\begin{enumerate}
+\item Essa tende a zero per $n$ che tende ad infinito
+\item Essa non \`e limitata
+\item Essa tende ad infinito per $n$ che tende ad infinito
+\item Essa tende a $10/9$ per $n$ che tende ad infinito
+\item Nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Dominano gli esponenziali: $c_n\sim(9/10)^n\to0$.
+
+% Pag. originale 449/521
+\iffalse Pag. originale 449/521 \fi
+\begin{quiz}
+La successione $c_n=(-1)^n\dfrac{\log(n+1)}{n+1}$
+\begin{enumerate}
+\item non ammette limite finito o infinito per $n$ che tende ad infinito
+\item \`e strettamente crescente
+\item non \`e limitata superiormente
+\item $\exists m\in\mathbb N$ tale che $\forall n>m$ risulta $|c_n|<0.002$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $|c_n|=\log(n+1)/(n+1)\to0$, dunque la condizione epsilon vale.
+
+% Pag. originale 449/521
+\iffalse Pag. originale 449/521 \fi
+\begin{quiz}
+La funzione $f(x)=\begin{cases}e^{|x|},&x\ne0\\k,&x=0\end{cases}$ definita su tutto $\mathbb R$ ammette un minimo per
+\begin{enumerate}
+\item tutti i valori di $k$
+\item solo per valori negativi di $k$
+\item solo per valori positivi di $k$
+\item per valori di $k$ minori o uguali ad $1$
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Per $x\ne0$, $e^{|x|}>1$ con infimo $1$ non raggiunto; il minimo esiste esattamente se $k\le1$.
+
+% Pag. originale 450/521
+\iffalse Pag. originale 450/521 \fi
+\begin{quiz}
+Il numero complesso $w=z+\dfrac1z$ (con $z\ne0$) \`e un numero reale
+\begin{enumerate}
+\item per due soli valori di $z$ immaginari puri
+\item per due soli valori di $z$ reali
+\item per infiniti valori di $z$ immaginari puri
+\item per nessun valore di $z$
+\item solo se $z=1+i$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: Per $z=iy$, $w=i(y-1/y)$ \`e reale esattamente per $y=\pm1$. NOTA: anche ogni $z$ reale non nullo rende $w$ reale; A resta vera come condizione specifica sui puri immaginari.
+
+% Pag. originale 450/521
+\iffalse Pag. originale 450/521 \fi
+\begin{quiz}
+Sia data la funzione $f(x)=\dfrac{x(2+\sin x)}{x^3+3x+1}$. Quando $x\to+\infty$ \`e corretto affermare che
+\begin{enumerate}
+\item $f(x)\sim\dfrac2{x^2}$
+\item $f(x)=o\left(\dfrac1{x^2}\right)$
+\item non esiste il limite $\lim_{x\to+\infty}f(x)$
+\item $f(x)$ non ammette asintoto obliquo e non ammette asintoto orizzontale
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.4
+% SPIEGAZIONE: $f(x)=(2+\sin x)/x^2\,(1+o(1))$, quindi $f\to0$ e ha asintoto orizzontale $y=0$, ma non \`e equivalente a $2/x^2$.
+
+% Pag. originale 450/521
+\iffalse Pag. originale 450/521 \fi
+\begin{quiz}
+La funzione $f(x)=\log\dfrac{1+x+x^2}{1-x+x^2}+2\sin x+k\cos x$, in cui $k$ \`e un parametro reale:
+\begin{enumerate}
+\item \`e dispari solo se $k=0$
+\item \`e pari solo se $k=0$
+\item qualunque sia il valore di $k$, non \`e mai dispari
+\item qualunque sia il valore di $k$, essa \`e sempre dispari
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 1.4
+% SPIEGAZIONE: Il logaritmo del rapporto \`e dispari, come $\sin x$; $k\cos x$ \`e pari e deve scomparire per avere disparit\`a.
+
+% Pag. originale 450/521
+\iffalse Pag. originale 450/521 \fi
+\begin{quiz}
+La funzione $f(x)=2|x|\sin x+\cos x+x$
+\begin{enumerate}
+\item \`e continua, ma non derivabile in $x=0$
+\item \`e continua e derivabile in $x=0$
+\item non \`e n\'e continua n\'e derivabile in $x=0$
+\item \`e una funzione periodica
+\item nessuna delle altre \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $|x|\sin x=O(x^2)$ e $f(0)=1$; $(f(x)-1)/x\to1$, dunque \`e derivabile.
+Risposta completata

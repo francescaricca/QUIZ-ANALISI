@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Analisi 1 · Eserciziario</title>
+
+  <style>
+    :root {
+      font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+      background: #fffaf0;
+      color: #30343b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    header {
+      background: #f9e8b4;
+      border-bottom: 1px solid #f2dfac;
+      padding: 30px max(20px, calc((100vw - 1080px) / 2));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 29px;
+      font-weight: 720;
+      letter-spacing: -.5px;
+    }
+
+    header p {
+      margin: 7px 0 0;
+      color: #656a70;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 26px 16px;
+    }
+
+    .card {
+      background: #fffefa;
+      border: 1px solid #eee8dc;
+      border-radius: 12px;
+      padding: 23px;
+      margin: 0 0 18px;
+      box-shadow: 0 1px 4px #30343b08;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .stats b {
+      font-size: 28px;
+      color: #e39b36;
+      display: block;
+      margin-top: 6px;
+    }
+
+    button,
+    .upload {
+      border: 1px solid #e59a48;
+      border-radius: 7px;
+      padding: 10px 15px;
+      background: #e59a48;
+      color: white;
+      font-weight: 650;
+      cursor: pointer;
+      display: inline-block;
+      box-shadow: none;
+    }
+
+    button.secondary,
+    .upload.secondary {
+      background: #fff7e9;
+      border-color: #e7dac4;
+      color: #dc8840;
+    }
+
+    button:hover,
+    .upload:hover {
+      filter: brightness(.97);
+    }
+
+    button:disabled {
+      opacity: .45;
+      cursor: default;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    input[type=file] {
+      display: none;
+    }
+
+    .muted {
+      color: #70747b;
+      font-size: 14px;
+    }
+
+    .chapter {
+      font-size: 19px;
+      font-weight: 750;
+      margin: 24px 0 10px;
+      color: #30343b;
+    }
+
+    .section {
+      border-top: 1px solid #ece4d5;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .section small {
+      display: block;
+      color: #70747b;
+      margin-top: 5px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .preview {
+      max-height: 65vh;
+      overflow: auto;
+    }
+
+    .previewitem {
+      border-top: 1px solid #ece4d5;
+      padding: 12px 0;
+    }
+
+    .previewitem p {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      background: #fffefa;
+      color: #30343b;
+      border: 1px solid #e7dac4;
+      text-align: left;
+      margin: 9px 0;
+      padding: 14px;
+      border-radius: 7px;
+    }
+
+    .option.selected {
+      border: 2px solid #e9b954;
+      background: #fff3d3;
+    }
+
+    .option.correct {
+      border: 2px solid #78a886;
+      background: #f0f7e9;
+    }
+
+    .option.wrong {
+      border: 2px solid #d97a79;
+      background: #fff0eb;
+    }
+
+    select,
+    textarea {
+      padding: 10px;
+      border-radius: 7px;
+      max-width: 100%;
+      border: 1px solid #e7dac4;
+      background: #fff;
+      color: #30343b;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 75px;
+      font: inherit;
+    }
+
+    .notice {
+      padding: 14px;
+      border-radius: 8px;
+      background: #fff4da;
+      border: 1px solid #f0dfbb;
+      margin: 12px 0;
+    }
+
+    #question {
+      font-size: 19px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    #feedback {
+      line-height: 1.6;
+    }
+
+    .correction {
+      background: #fff8e9;
+      border: 1px solid #f0dfbb;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .correction h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .correction h4 {
+      margin: 14px 0 6px;
+      font-size: 14px;
+      color: #dc8840;
+    }
+
+    .correction p {
+      margin: 8px 0;
+    }
+
+    .correction .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #e19b49;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .correction details {
+      margin: 12px 0;
+    }
+
+    .correction summary {
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #70747b;
+    }
+
+    .error-entry {
+      padding: 17px 0;
+      border-top: 1px solid #ece4d5;
+    }
+
+    .error-entry p {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .error-entry textarea {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .sectionbuttons {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        display: block;
+      }
+
+      .sectionbuttons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Analisi 1</h1>
+    <p>Eserciziario e ripasso per argomento</p>
+  </header>
+
+  <main>
+
+    <!-- PAGINA PRINCIPALE -->
+
+    <div id="home">
+
+      <div class="card">
+        <h2>Archivio esercizi</h2>
+
+        <p class="muted">
+          Aggiungi nuove domande e controlla la sezione proposta prima di salvarle.
+        </p>
+
+        <div class="toolbar">
+
+          <label class="upload" for="texFile">
+            Carica file .tex
+          </label>
+          <input id="texFile" type="file" accept=".tex,text/plain" multiple>
+
+          <label class="upload secondary" for="jsonFile">
+            Importa archivio JSON
+          </label>
+          <input id="jsonFile" type="file" accept=".json,application/json">
+
+          <button class="secondary" id="export">
+            Esporta quiz e progressi
+          </button>
+
+          <label class="upload secondary" for="backupFile">
+            Ripristina backup
+          </label>
+          <input id="backupFile" type="file" accept=".json">
+
+        </div>
+
+        <p id="status" class="muted"></p>
+
+        <div id="preview" class="hidden">
+
+          <h3>Verifica le sezioni proposte</h3>
+          <p id="previewSummary" class="muted"></p>
+
+          <div class="preview" id="previewList"></div>
+
+          <div class="toolbar" style="margin-top:14px">
+            <button id="confirm">Conferma importazione</button>
+            <button class="secondary" id="cancel">Annulla</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STATISTICHE -->
+
+      <div class="stats">
+
+        <div class="card">
+          Quiz caricati
+          <b id="total">0</b>
+        </div>
+
+        <div class="card">
+          Quiz affrontati
+          <b id="done">0</b>
+        </div>
+
+        <div class="card">
+          Da ripassare
+          <b id="due">0</b>
+        </div>
+
+        <div class="card">
+          Precisione
+          <b id="accuracy">—</b>
+        </div>
+
+      </div>
+
+      <!-- SIMULAZIONE -->
+
+      <div class="card">
+
+        <h2>Simulazione d’esame</h2>
+
+        <p class="muted">
+          Allenati con tutte le domande disponibili, mescolate e senza suddivisione per capitolo.
+        </p>
+
+        <div class="toolbar">
+          <button id="simulateAll">Avvia simulazione completa</button>
+          <button class="secondary" id="simulateWrong">Simula solo gli errori</button>
+        </div>
+
+      </div>
+
+      <!-- REGISTRO ERRORI -->
+
+      <div class="card">
+
+        <h2>Registro degli errori</h2>
+
+        <p class="muted">
+          Rivedi le risposte sbagliate e le tue annotazioni personali,
+          oppure riprova le domande.
+        </p>
+
+        <div class="toolbar">
+          <button class="secondary" id="openErrors">
+            Apri registro errori
+          </button>
+
+          <span id="errorCount" class="muted"></span>
+        </div>
+
+      </div>
+
+      <!-- RIPASSO -->
+
+      <div class="card">
+
+        <h2>Ripasso quotidiano</h2>
+
+        <p class="muted">
+          Gli errori tornano prima, le risposte corrette vengono riproposte più avanti.
+        </p>
+
+        <button id="review">Ripassa ora</button>
+
+      </div>
+
+      <!-- CAPITOLI -->
+
+      <div class="card">
+
+        <h2>Capitoli e sezioni</h2>
+
+        <div id="statsPanel" class="card"></div>
+        <div id="chapters"></div>
+
+      </div>
+
+    </div>
+
+    <!-- PAGINA ERRORI -->
+
+    <div id="errorsPage" class="hidden">
+
+      <div class="card">
+
+        <div class="toolbar">
+
+          <button class="secondary" id="closeErrors">
+            ← Torna alle sezioni
+          </button>
+
+          <button class="secondary" id="exportErrors">
+            Esporta registro errori
+          </button>
+
+        </div>
+
+        <h2 style="margin-top:18px">Registro degli errori</h2>
+
+        <p class="muted">
+          Domande sbagliate almeno una volta e domande con note personali.
+          Puoi aggiornare le note in qualsiasi momento.
+        </p>
+
+        <div id="errorEntries"></div>
+
+      </div>
+
+    </div>
+
+    <!-- SESSIONE QUIZ -->
+
+    <div id="session" class="hidden">
+
+      <div class="card">
+
+        <div class="toolbar">
+
+          <button class="secondary" id="exit">
+            ← Sezioni
+          </button>
+
+          <span id="counter"></span>
+
+        </div>
+
+        <div class="sticky-quiz-nav">
+          <button id="previousTop" class="secondary">← Precedente</button>
+          <strong id="counterTop"></strong>
+          <button id="nextTop" class="secondary">Successiva →</button>
+        </div>
+
+        <h2 id="sessionTitle"></h2>
+
+        <p class="muted" id="source"></p>
+
+        <div id="question"></div>
+
+        <div id="options"></div>
+
+        <p id="feedback"></p>
+
+        <div id="correction" class="correction hidden"></div>
+
+        <!-- NAVIGAZIONE LIBERA TRA LE DOMANDE -->
+
+        <div class="toolbar">
+
+          <button id="check">
+            Conferma risposta
+          </button>
+
+          <button id="unsure" class="secondary" disabled>Non ero sicura</button>
+
+          <button id="hard" class="secondary">
+            ☆ Segna difficile
+          </button>
+
+          <button id="previous" class="secondary">
+            ← Precedente
+          </button>
+
+          <button id="next" class="secondary">
+            Successiva →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="footer">
+      I progressi sono salvati su questo dispositivo.
+      È disponibile un backup esportabile.
+    </p>
+
+  </main>
+
+  <style>
+    .sticky-quiz-nav { position: sticky; top: 8px; z-index: 30; display: flex;
+      align-items: center; justify-content: space-between; gap: 10px;
+      padding: 10px; background: #f4f7ff; border: 1px solid #cbd5e1;
+      border-radius: 12px; margin: 12px 0; box-shadow: 0 3px 12px #0001; }
+    .sticky-quiz-nav button { min-width: 125px; }
+    .stats-table { border-collapse: collapse; width: 100%; }
+    .stats-table td, .stats-table th { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+    @media (max-width: 480px) { .sticky-quiz-nav button { min-width: auto; padding: 8px; } }
+  </style>
+  <script src="app.js"></script>
+
+</body>
+</html>

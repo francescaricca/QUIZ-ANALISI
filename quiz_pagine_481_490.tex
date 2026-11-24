@@ -1,0 +1,408 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 481-490 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine 481-490: 5 quesiti della 28a simulazione e 20 quesiti della 29a simulazione.
+
+% Pag. originale 481/521
+\iffalse Pag. originale 481/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to+\infty}x\left(\cos\frac1x-e^{4/x}\right)=$
+\begin{enumerate}
+\item $-4$
+\item $1$
+\item $\nexists$
+\item $\dfrac12$
+\item $-\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Ponendo $t=1/x$, si ha $\cos t-e^{4t}=-4t+O(t^2)$, dunque il limite vale $-4$.
+
+% Pag. originale 481/521
+\iffalse Pag. originale 481/521 \fi
+\begin{quiz}
+L'equazione differenziale $y'=e^{x+y}$:
+\begin{enumerate}
+\item \`e lineare
+\item \`e a variabili separabili
+\item ammette $y=e^x$ come soluzione particolare
+\item la soluzione che soddisfa il problema di Cauchy $y(0)=1$ \`e $y=e^x$
+\item nessuna delle precedenti
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: $y\prime=e^x e^y$ separa le variabili: $e^{-y}\,dy=e^x\,dx$. Non \`e lineare in $y$.
+
+% Pag. originale 481/521
+\iffalse Pag. originale 481/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{n\to+\infty}(3+n)^{5/\log n}=$
+\begin{enumerate}
+\item $5$
+\item $1$
+\item $+\infty$
+\item $0$
+\item $e^5$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Il logaritmo della potenza \`e $5\log(n+3)/\log n\to5$; per continuit\`a della funzione esponenziale il limite \`e $e^5$.
+
+% Pag. originale 481/521
+\iffalse Pag. originale 481/521 \fi
+\begin{quiz}
+Senza il calcolo della derivata prima, si pu\`o affermare che la funzione $f:[0,2\pi]\to\mathbb R$, $f(x)=e^{\cos x}\sin x$:
+\begin{enumerate}
+\item ammette almeno due punti critici in $(0,2\pi)$
+\item ha un solo punto critico in $(0,2\pi)$
+\item non ha punti critici in $(0,\pi)$
+\item non ha punti critici in $(\pi,2\pi)$
+\item $f'(x)=0$ ha una sola soluzione con $x\in(0,2\pi)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: $f(0)=f(\pi)=f(2\pi)=0$. Per Rolle, esiste un punto stazionario in $(0,\pi)$ e uno in $(\pi,2\pi)$.
+
+% Pag. originale 481/521
+\iffalse Pag. originale 481/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to4/5}\frac{1-\cos(5x-4)}{(x-\frac45)^2}=$
+\begin{enumerate}
+\item $\dfrac12$
+\item $\dfrac{25}{2}$
+\item $\dfrac52$
+\item $1$
+\item $\dfrac1{5\cdot2}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Con $t=5x-4=5(x-4/5)$, il limite \`e $25\lim_{t\to0}(1-\cos t)/t^2=25/2$.
+
+% Pag. originale 486/521
+\iffalse Pag. originale 486/521 \fi
+\begin{quiz}
+Siano $A$ e $B$ due insiemi, con $A$ e $B\subseteq\mathbb R$ e tali che $\sup A=\sup B=3$. Allora
+\begin{enumerate}
+\item $\max A=\max B$
+\item se $\max A=3$ allora $\max B=3$
+\item $A\equiv B$
+\item $\inf A=\inf B$
+\item $B$ pu\`o non ammettere massimo
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: L\'estremo superiore pu\`o non appartenere a $B$, per esempio $B=(0,3)$, che non ha massimo.
+
+% Pag. originale 486/521
+\iffalse Pag. originale 486/521 \fi
+\begin{quiz}
+Sia $A\subseteq\mathbb R$ e $\inf A=5$
+\begin{enumerate}
+\item $5$ \`e uno degli elementi di $A$
+\item non \`e detto che $5$ sia il minimo di $A$
+\item $5$ \`e il pi\`u piccolo dei minoranti di $A$
+\item $5\in A$
+\item esistono elementi di $A$ minori di $5$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: L\'infimo \`e il maggiore dei minoranti, ma non deve appartenere all\'insieme. Per esempio $A=(5,6)$.
+
+% Pag. originale 486/521
+\iffalse Pag. originale 486/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione continua tale che $f(x)=-f(-x)$. Quale delle seguenti affermazioni \`e sempre vera?
+\begin{enumerate}
+\item $\displaystyle\int_{-1}^{1}f(x)\,dx=2\int_0^1f^2(x)\,dx$
+\item $\displaystyle\int_0^1f(x)\,dx=0$
+\item $\displaystyle\int_{-1}^1f(x)\,dx=0$
+\item $\displaystyle\int_{-1}^1f(x)\,dx=2\int_0^1f(x)\,dx$
+\item $\displaystyle\int_{-1}^0f(x)\,dx=\int_0^1f(x)\,dx$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.2
+% SPIEGAZIONE: La funzione \`e dispari; l\'integrale su un intervallo simmetrico rispetto all\'origine vale zero.
+
+% Pag. originale 486/521
+\iffalse Pag. originale 486/521 \fi
+\begin{quiz}
+Sia $y(x)$ la soluzione del problema di Cauchy $\begin{cases}y\prime\prime+4y=0,\\y(0)=1,\\y\prime(0)=0.\end{cases}$ Allora
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to+\infty}y(x)=0$
+\item $\displaystyle\lim_{x\to+\infty}y(x)=-\infty$
+\item $\displaystyle\lim_{x\to+\infty}y(x)=\nexists$
+\item $\displaystyle\lim_{x\to+\infty}y(x)=1$
+\item $\displaystyle\lim_{x\to+\infty}y(x)=\pi$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: La soluzione del problema \`e $y(x)=\cos(2x)$, che oscilla e non ha limite per $x\to+\infty$.
+
+% Pag. originale 487/521
+\iffalse Pag. originale 487/521 \fi
+\begin{quiz}
+Se $g(x)=f(x^2)$, allora il polinomio di Taylor di grado $2$ della funzione $g$ con centro in $x=0$ \`e:
+\begin{enumerate}
+\item $f(0)+f\prime(0)x+f\prime\prime(0)x^2$
+\item $2f\prime(0)x+f\prime\prime(0)x^2$
+\item $f(0)+f\prime(0)x+\dfrac12f\prime\prime(0)x^2$
+\item $f(0)+\dfrac1{2!}f\prime(0)x^2$
+\item $f(0)+f\prime(0)x^2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: $f(x^2)=f(0)+f\prime(0)x^2+o(x^2)$, assumendo la regolarit\`a necessaria. La risposta D differisce per il fattore $1/2$.
+
+% Pag. originale 487/521
+\iffalse Pag. originale 487/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione di classe $C^{(n)}(\mathbb R)$. Quale delle seguenti affermazioni \`e SEMPRE vera?
+\begin{enumerate}
+\item Se $f(1)=1$ e $f(-1)=-1$ allora $f^2$ ha un minimo assoluto.
+\item Se $f$ ha un punto di minimo allora $f^2$ ha un punto di minimo
+\item Se $f$ \`e crescente allora $f^2$ \`e crescente
+\item Se $f$ \`e convessa allora $f^2$ \`e convessa.
+\item Se $f(1)=1$ e $f(-1)=-1$ allora $f^3$ ha un minimo assoluto.
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Per il teorema degli zeri, $f$ si annulla in un punto di $(-1,1)$. Quindi $f^2\ge0$ raggiunge il minimo assoluto $0$.
+
+% Pag. originale 487/521
+\iffalse Pag. originale 487/521 \fi
+\begin{quiz}
+$\displaystyle\int_0^1xf(2x^2+3)\,dx=$
+\begin{enumerate}
+\item $\displaystyle\frac14\int_3^5f(t)\sqrt{\frac{t-3}{2}}\,dt$
+\item $\displaystyle4\int_3^5f(t)\sqrt{\frac{t-3}{2}}\,dt$
+\item $\displaystyle\frac14\int_3^5f(t)\,dt$
+\item $\displaystyle4\int_3^5f(t)\,dt$
+\item $\displaystyle4\int_0^1f(t+3)\,dt$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: Con $t=2x^2+3$, $dt=4x\,dx$; gli estremi diventano $3$ e $5$.
+
+% Pag. originale 487/521
+\iffalse Pag. originale 487/521 \fi
+\begin{quiz}
+Lo sviluppo di Mac Laurin, di ordine $6$, della funzione $f(x)=\log\bigl(2+\sin(x^6)\bigr)$ \`e
+\begin{enumerate}
+\item $\log2+x^6+o(x^6)$
+\item $1+\dfrac{x^6}{2}+o(x^6)$
+\item $2+x^6+o(x^6)$
+\item $\log2+\dfrac{x^6}{2}+o(x^6)$
+\item $\log2+\dfrac{x^6}{6!}+o(x^6)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: $\sin(x^6)=x^6+o(x^6)$ e $\log(2+u)=\log2+u/2+o(u)$.
+
+% Pag. originale 487/521
+\iffalse Pag. originale 487/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to+\infty}\frac3x\log(e^{2x}+x)=$
+\begin{enumerate}
+\item $6$
+\item $0$
+\item $2$
+\item $+\infty$
+\item $\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $\log(e^{2x}+x)=2x+\log(1+xe^{-2x})=2x+o(1)$; quindi il limite vale $6$.
+
+% Pag. originale 488/521
+\iffalse Pag. originale 488/521 \fi
+\begin{quiz}
+Sia data la funzione $f(x)=\sinh x$. Allora:
+\begin{enumerate}
+\item $f^{(n)}(0)=1$ solo se $n=4k+1$, $k\in\mathbb N$
+\item $f^{(n)}(\pi/2)=1$ se $n\ge2$, dispari
+\item $f^{(n)}(0)=-1$ se $n\ge2$, pari
+\item $f^{(n)}(0)=1$ se $n=2k+1$, $k\in\mathbb N$
+\item $f^{(n)}(\pi/2)=1$ se $k=4k$, $k\in\mathbb N$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.1
+% SPIEGAZIONE: Le derivate di $\sinh x$ alternano $\cosh x$ e $\sinh x$; quelle dispari in zero valgono $1$, quelle pari valgono $0$.
+
+% Pag. originale 488/521
+\iffalse Pag. originale 488/521 \fi
+\begin{quiz}
+Sia $F$ una primitiva della funzione $f:\mathbb R\to\mathbb R$, continua. Sappiamo che $F$ ha un massimo in $x_0$, allora necessariamente
+\begin{enumerate}
+\item $f$ si annulla in $x_0$
+\item $f$ \`e derivabile in $x_0$
+\item $f$ ha un minimo in $x_0$
+\item $F$ si annulla in $x_0$
+\item $f\ge0$, $\forall x\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 5.1
+% SPIEGAZIONE: Essendo $F\prime=f$ e $F$ derivabile, per Fermat $F\prime(x_0)=f(x_0)=0$.
+
+% Pag. originale 488/521
+\iffalse Pag. originale 488/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to4/5}\frac{1-\cos(5x-4)}{(x-\frac45)^2}=$
+\begin{enumerate}
+\item $\dfrac{25}{2}$
+\item $\dfrac{25}{4}$
+\item $25$
+\item $\dfrac45$
+\item $1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Come nel quesito 20 della 28a simulazione, $1-\cos t\sim t^2/2$ con $t=5(x-4/5)$, dunque $25/2$.
+
+% Pag. originale 488/521
+\iffalse Pag. originale 488/521 \fi
+\begin{quiz}
+Per quali valori di $a\in\mathbb R$ la funzione $f(x)=\log|x-5|$ soddisfa le condizioni del teorema degli zeri, nell\'intervallo $[a,7]$?
+\begin{enumerate}
+\item $a<6$
+\item $a\in[5,6)$
+\item $a\in(5,6]$
+\item $a\in[5,6]$
+\item $a\in(5,6)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: La funzione deve essere continua su $[a,7]$: occorre $a>5$. Inoltre $f(7)=\log2>0$ e $f(a)<0$ richiede $|a-5|<1$, cio\`e $a<6$. Il caso $a=6$ ha gi\`a uno zero all\'estremo, ma non assicura uno zero interno tramite il criterio dei segni opposti.
+
+% Pag. originale 488/521
+\iffalse Pag. originale 488/521 \fi
+\begin{quiz}
+Il modulo del numero complesso $w=\dfrac{1+i}{3+4i}$ \`e
+\begin{enumerate}
+\item $\dfrac5{12}$
+\item $\dfrac{\sqrt2}{5}$
+\item $\sqrt{\dfrac7{12}}$
+\item $\sqrt{\dfrac25}$
+\item $\dfrac2{25}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.3
+% SPIEGAZIONE: $|w|=|1+i|/|3+4i|=\sqrt2/5$.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+$\displaystyle\lim_{x\to+\infty}\frac{\log(x^{-1/2})}{2-\cos^2x}=$
+\begin{enumerate}
+\item $+\infty$
+\item $-\infty$
+\item $0$
+\item $\nexists$
+\item $0^-$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $\log(x^{-1/2})=-\frac12\log x\to-\infty$, mentre $1\le2-\cos^2x\le2$. Il quoziente tende a $-\infty$.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+L\'integrale improprio $\displaystyle\int_1^{+\infty}\log\left(1+\frac1{x^4}\right)\,dx=$
+\begin{enumerate}
+\item converge a zero
+\item diverge positivamente
+\item converge ad un numero positivo
+\item \`e indeterminato
+\item $\displaystyle\int_1^{+\infty}\log\left(1+\frac1{x^4}\right)\,dx\sim\int_1^{+\infty}\frac1{x^4}\,dx$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.5
+% SPIEGAZIONE: Per $x\to\infty$, $\log(1+x^{-4})\sim x^{-4}$: l\'integrale converge e, essendo l\'integranda positiva, ha valore positivo. L\'alternativa E usa impropriamente $\sim$ tra valori di integrali definiti, che non sono necessariamente equivalenti.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+Sia $f(x)=(x-10)^6\cdot\sin x$. Allora
+\begin{enumerate}
+\item $\exists$ un solo $c\in(0,10)$ tale che $f\prime(c)=0$
+\item $\exists$ un solo $c\in(\pi,10)$ tale che $f\prime(c)=0$
+\item $x=10$ \`e punto di flesso a tangente orizzontale
+\item $x=0$ \`e punto critico
+\item $\exists c\in(0,\pi)$ tale che $f\prime(c)=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: $f(0)=f(\pi)=0$ e $f$ \`e continua su $[0,\pi]$ e derivabile all\'interno. Per Rolle esiste $c\in(0,\pi)$ con $f\prime(c)=0$.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+La parte principale, per $x\to0^+$, della funzione $f(x)=\sqrt{x^2+x^3}-x-x^3$ \`e
+\begin{enumerate}
+\item $2x$
+\item $x$
+\item $x^2$
+\item $\dfrac12x^2$
+\item $-x^3$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: Per $x>0$, $\sqrt{x^2+x^3}=x\sqrt{1+x}=x+\frac12x^2+O(x^3)$. Sottraendo $x+x^3$ rimane $\frac12x^2+O(x^3)$.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+Sia $f(x)=2+3x+\arctan x$. Allora $(f^{-1})\prime(2)=$
+\begin{enumerate}
+\item $\dfrac{16}{5}$
+\item $4$
+\item $\dfrac14$
+\item $\dfrac12+\dfrac1{3\cdot2}+\dfrac1{\arctan2}$
+\item nessuna delle altre risposte \`e esatta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $f(0)=2$ e $f\prime(0)=3+1=4$. Per il teorema della derivata dell\'inversa, $(f^{-1})\prime(2)=1/4$.
+
+% Pag. originale 489/521
+\iffalse Pag. originale 489/521 \fi
+\begin{quiz}
+Sia $f$ una funzione $\in C^{(n)}(\mathbb R)$ e sia $x_0$ un punto di massimo locale della funzione $f$. Allora \`e vero che
+\begin{enumerate}
+\item $\exists\delta>0:\ \forall x\in\{|x-x_0|<\delta\}\Rightarrow f(x)<f(x_0)$
+\item $f(x)>f(x_0)$, $\forall x\in\mathbb R$
+\item $\exists\delta>0:\ \forall x\in\{0<|x-x_0|<\delta\}\Rightarrow f(x)\le f(x_0)$
+\item $f(x)\le f(x_0)$, $\forall x\in\mathbb R$
+\item $\exists\delta>0:\ \forall x\in\{|x-x_0|<\delta\}\Rightarrow f(x)\le f(x_0)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: La definizione di massimo locale \`e esattamente l\'alternativa E. Anche C \`e vera, perch\`e restringe la stessa propriet\`a ai soli $x\ne x_0$: il testo presenta due alternative corrette.
+Risposta completata

@@ -1,0 +1,393 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 461-470 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine 461-470: pagine 461-464 e 468 contengono spiegazioni; 465-467 quiz vari (14); 469-470 27a simulazione (10).
+
+% Pag. originale 465/521
+\iffalse Pag. originale 465/521 \fi
+\begin{quiz}
+Siano date una successione $a_n$ convergente a un numero reale $l\neq0$, con $a_n\neq0$ per ogni $n$, e una successione $b_n$ limitata. Allora, la successione $\dfrac{b_n}{a_n}$
+\begin{enumerate}
+\item \`e limitata
+\item \`e convergente
+\item non \`e limitata
+\item converge o diverge
+\item \`e infinitesima
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Dato che $a_n\to l\neq0$, la successione $1/a_n$ \`e definitivamente limitata; i primi termini sono in numero finito e non nulli. Il prodotto $b_n/a_n$ \`e dunque limitato.
+
+% Pag. originale 465/521
+\iffalse Pag. originale 465/521 \fi
+\begin{quiz}
+Se una successione $a_n$ non \`e limitata, allora
+\begin{enumerate}
+\item per ogni $M>0$ esiste $n\in\mathbb N$ tale che $a_n>M$
+\item per ogni $M>0$ esiste $n\in\mathbb N$ tale che $a_n<-M$
+\item per ogni $M>0$ esiste $n\in\mathbb N$ tale che $|a_n|>M$
+\item per ogni $M>0$ esiste $N\in\mathbb N$ tale che $|a_n|>M$ per ogni $n>N$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 2.1
+% SPIEGAZIONE: La negazione della limitatezza $\exists M>0\ \forall n:\ |a_n|\le M$ \`e $\forall M>0\ \exists n:\ |a_n|>M$.
+
+% Pag. originale 465/521
+\iffalse Pag. originale 465/521 \fi
+\begin{quiz}
+Se $f=o(g)$ e $g=o(x^5)$ per $x\to0$, allora (sempre per $x\to0$) possiamo dire che
+\begin{enumerate}
+\item $f(x)+x^5=o(g(x))$
+\item $f(x)g(x)=o(x^{11})$
+\item $f(x)g(x)\sim x^{10}$
+\item $\dfrac{f(x)}{x^5}\to0$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: Dalla transitivit\`a di $o$ piccolo, $f=o(g)$ e $g=o(x^5)$ implicano $f=o(x^5)$.
+
+% Pag. originale 465/521
+\iffalse Pag. originale 465/521 \fi
+\begin{quiz}
+Se, per $x\to x_0$, $g$ \`e infinitesima e $f+g^2=o(g)$, allora (sempre per $x\to x_0$) possiamo dire che
+\begin{enumerate}
+\item $f=o(g)$
+\item $f=o(g^2)$
+\item $f+g=o(g)$
+\item $g=o(g)$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: Poich\'e $g\to0$, si ha $g^2=o(g)$. Pertanto $f=(f+g^2)-g^2=o(g)$.
+
+% Pag. originale 465/521
+\iffalse Pag. originale 465/521 \fi
+\begin{quiz}
+La funzione $f:[-1,1]\to\mathbb R$, definita come $f(x)=-x^5$ se $x\neq0$ e $f(0)=a$, dove $a$ \`e un parametro reale, assume tutti i valori compresi tra il suo massimo e il suo minimo se e solo se
+\begin{enumerate}
+\item $a\le0$
+\item $a=0$
+\item $a=-1$
+\item $a=1$
+\item $-1\le a\le1$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Per $a=0$ la funzione \`e continua e l\textquotesingle immagine \`e $[-1,1]$. Per $a\neq0$ manca il valore $0$, interno all\textquotesingle intervallo tra minimo e massimo.
+
+% Pag. originale 466/521
+\iffalse Pag. originale 466/521 \fi
+\begin{quiz}
+La funzione $f:[-1,0]\to\mathbb R$, definita come $f(x)=-\sqrt[3]{x}$ se $-1\le x<0$ e $f(0)=a$, dove $a$ \`e un parametro reale, ammette minimo se e solo se
+\begin{enumerate}
+\item $a\le0$
+\item $a=0$
+\item $a<0$
+\item $a>0$
+\item $a\ge0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Per $x\in[-1,0)$, $-\sqrt[3]{x}>0$ e tende a $0$ senza raggiungerlo. Il minimo esiste solo se $f(0)=a\le0$.
+
+% Pag. originale 466/521
+\iffalse Pag. originale 466/521 \fi
+\begin{quiz}
+Sia $a>-2$ un parametro reale. La funzione $f:[-2,a)\to\mathbb R$, definita come $f(x)=\cosh x$ ammette minimo se e solo se
+\begin{enumerate}
+\item $a\le0$
+\item $a=0$
+\item $a<0$
+\item $a>0$
+\item $a\ge0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: $\cosh x$ \`e decrescente per $x<0$ e ha minimo in $x=0$. Tale punto appartiene a $[-2,a)$ esattamente se $a>0$.
+
+% Pag. originale 466/521
+\iffalse Pag. originale 466/521 \fi
+\begin{quiz}
+Sia $f(x)=e^{\sinh x}\cos x$. Nell\textquotesingle intervallo $\left(-\dfrac\pi2,\dfrac{3\pi}2\right)$ la derivata prima $f\prime(x)$
+\begin{enumerate}
+\item non si annulla mai
+\item si annulla almeno due volte
+\item si annulla soltanto una volta
+\item si annulla infinite volte
+\item nessuna delle precedenti risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $f$ \`e continua sui segmenti $[-\pi/2,\pi/2]$ e $[\pi/2,3\pi/2]$ e si annulla agli estremi. Rolle garantisce uno zero di $f\prime$ in ciascuno dei due intervalli aperti, entrambi contenuti nell\textquotesingle intervallo dato.
+
+% Pag. originale 466/521
+\iffalse Pag. originale 466/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione derivabile, con $f\prime(1)=2$. Allora, la funzione $g(x)=\dfrac{f(x)}x$ verifica
+\begin{enumerate}
+\item $g\prime(1)=-2$
+\item $g\prime(1)=2+f(1)$
+\item $g\prime(1)=2-f(1)$
+\item $g\prime(1)=f(1)$
+\item nesuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Per la regola del quoziente, $g\prime(x)=[xf\prime(x)-f(x)]/x^2$ e quindi $g\prime(1)=2-f(1)$.
+
+% Pag. originale 466/521
+\iffalse Pag. originale 466/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione derivabile tale che $f(0)=0$, $f(2)=3$. Ponendo $g(x)=e^{-f(x)}$, allora esiste un punto $c\in(0,2)$ tale che
+\begin{enumerate}
+\item $g\prime(c)=e^3/2$
+\item $g\prime(c)=e^{-3}/2$
+\item $g\prime(c)=(e^3-1)/2$
+\item $g\prime(c)=(e^{-3}-1)/2$
+\item $g\prime(c)=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Per Lagrange $g\prime(c)=[g(2)-g(0)]/2=(e^{-3}-1)/2$. ATTENZIONE: la soluzione ufficiale indica C, ma la sua stessa dimostrazione calcola $(e^{-3}-1)/2$, cio\`e D.
+
+% Pag. originale 467/521
+\iffalse Pag. originale 467/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to0^+}\frac{\sqrt{x^4+x^6}-x^2}{x^4}$ vale
+\begin{enumerate}
+\item $+\infty$
+\item $0$
+\item $1$
+\item $2$
+\item $\dfrac12$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 3.3
+% SPIEGAZIONE: Per $x>0$, $\sqrt{x^4+x^6}=x^2\sqrt{1+x^2}=x^2+\frac12x^4+o(x^4)$; il rapporto tende a $1/2$.
+
+% Pag. originale 467/521
+\iffalse Pag. originale 467/521 \fi
+\begin{quiz}
+Sia data una funzione continua $f:\mathbb R\to\mathbb R$. Se la sua media integrale sull\textquotesingle intervallo $[0,4]$ vale $0$, e $F$ \`e una primitiva di $f$, risulta
+\begin{enumerate}
+\item $F(4)+F(0)=0$
+\item $f(4)-f(0)=0$
+\item $F(4)=F(0)$
+\item $F(4)-F(0)=4$
+\item nessuna delle risposte precedenti \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: La media integrale nulla equivale a $\int_0^4 f(t)\,dt=0$; per il teorema fondamentale, $F(4)-F(0)=0$.
+
+% Pag. originale 467/521
+\iffalse Pag. originale 467/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione continua, e $F(x)=\int_0^x f(t)\,dt$. Allora, se $f\le0$ in $\mathbb R$, possiamo dedurre che
+\begin{enumerate}
+\item $F(x)\le0$ per ogni $x\in\mathbb R$
+\item $F(x)\le0$ per ogni $x\ge0$
+\item $F$ non \`e di classe $C^1$ su $\mathbb R$
+\item $F\prime$ ha media integrale $F(2)-F(0)$ sull\textquotesingle intervallo $[0,2]$
+\item $F(x)$ \`e decrescente
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: $F\prime=f\le0$ implica che $F$ \`e non crescente: E \`e corretta. Anche B \`e vera, perch\'e $F(x)=\int_0^x f\le0$ per $x\ge0$. Il quesito presenta quindi almeno due alternative vere; la chiave ufficiale indica E.
+
+% Pag. originale 467/521
+\iffalse Pag. originale 467/521 \fi
+\begin{quiz}
+L\textquotesingle equazione differenziale $x\prime=(1+x)(1-\cos x)(1-t)\sqrt{x}$
+\begin{enumerate}
+\item ha la soluzione costante $x(t)=1$ per ogni $t\in\mathbb R$
+\item non \`e a variabili separabili
+\item \`e lineare
+\item ha la soluzione costante $x(t)=-2\pi$ per ogni $t\in\mathbb R$
+\item ha la soluzione costante $x(t)=2\pi$ per ogni $t\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 7.1
+% SPIEGAZIONE: La forma $x\prime=h(x)(1-t)$ \`e separabile. Per $x=2\pi$, $1-\cos(2\pi)=0$, quindi $x(t)\equiv2\pi$ \`e soluzione; $x=-2\pi$ non appartiene al dominio reale di $\sqrt{x}$.
+
+% Pag. originale 469/521
+\iffalse Pag. originale 469/521 \fi
+\begin{quiz}
+Quale delle seguenti funzioni NON ha grafico uguale al grafico della sua funzione inversa?
+\begin{enumerate}
+\item le funzioni del tipo $f(x)=x$
+\item le funzioni del tipo $f(x)=x$ e $f(x)=-x+b$
+\item le funzioni del tipo $f(x)=x$ e $f(x)=ax+b$
+\item le funzioni del tipo $f(x)=-x$
+\item le funzioni del tipo $f(x)=-x$ e $f(x)=-x+b$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Una funzione affine $ax+b$ ha il medesimo grafico dell\textquotesingle inversa solo in casi particolari, come $a=1,b=0$ oppure $a=-1$. La proposta C include affini generiche che non hanno questa propriet\`a.
+
+% Pag. originale 469/521
+\iffalse Pag. originale 469/521 \fi
+\begin{quiz}
+Sia dato l\textquotesingle insieme $A=\{\arctan(-n):n\in\mathbb N\}\cup\{5\}$.
+\begin{enumerate}
+\item $\max A=5;\ \inf A=-\dfrac\pi2$
+\item $\sup A=5;\ \inf A=-\dfrac\pi2$
+\item $\sup A=\dfrac\pi2;\ \inf A=-\dfrac\pi2$
+\item $\min A=-\dfrac\pi2;\ \max A=5$
+\item $\inf A=-\dfrac\pi2;\ \max A=-\dfrac\pi4$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 1.2
+% SPIEGAZIONE: Il valore 5 appartiene ad $A$ ed \`e il massimo; $\arctan(-n)\to-\pi/2$ senza raggiungerlo. ATTENZIONE: anche B \`e vera, poich\'e ogni massimo \`e un estremo superiore; la domanda non ha risposta unica.
+
+% Pag. originale 469/521
+\iffalse Pag. originale 469/521 \fi
+\begin{quiz}
+Dato l\textquotesingle insieme $A=\{\cosh x:x\in\mathbb R\}\cup\{-9\}$.
+\begin{enumerate}
+\item $\inf A=1;\ \sup A=+\infty$
+\item $\min A=-9;\ \sup A=+\infty$
+\item $\min A=-1;\ \sup A=+\infty$
+\item $\inf A=-\infty;\ \sup A=+\infty$
+\item $\inf A=0;\ \max A=+\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.2
+% SPIEGAZIONE: $\cosh x\ge1$ e non \`e limitata superiormente. Aggiungendo $-9$ si ottiene il minimo $-9$ e il supremo $+\infty$.
+
+% Pag. originale 469/521
+\iffalse Pag. originale 469/521 \fi
+\begin{quiz}
+Sia dato $\displaystyle I=\int\frac{f\prime(x)}{f(x)}\,dx$; allora
+\begin{enumerate}
+\item $I=\log f(x)+c$
+\item $I=\arctan f(x)+c$
+\item $I=\log|f(x)|+c$
+\item $I=\dfrac{f\prime\prime(x)\cdot f(x)-(f\prime(x))^2}{f^2(x)}$
+\item $I=\dfrac{f(x)}{f\prime(x)}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: Dove $f(x)\neq0$, la derivata di $\log|f(x)|$ \`e $f\prime(x)/f(x)$; quindi la primitiva generale \`e $\log|f(x)|+c$.
+
+% Pag. originale 469/521
+\iffalse Pag. originale 469/521 \fi
+\begin{quiz}
+Data l\textquotesingle equazione differenziale $x\prime(t)=x\log t$
+\begin{enumerate}
+\item l\textquotesingle equazione ammette la soluzione costante $x(t)\equiv0$, $\forall x\in\mathbb R$
+\item l\textquotesingle equazione NON ammette soluzioni costanti
+\item l\textquotesingle equazione ammette la soluzione costante $x(t)\equiv0$, $t>0$
+\item l\textquotesingle equazione ammette la soluzione costante $x(t)\equiv0$, $t\ge0$
+\item l\textquotesingle equazione ammette infinite soluzioni costanti
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 7.1
+% SPIEGAZIONE: Il termine $\log t$ \`e definito per $t>0$. Su tale dominio $x(t)=0$ soddisfa $x\prime=0=x\log t$.
+
+% Pag. originale 470/521
+\iffalse Pag. originale 470/521 \fi
+\begin{quiz}
+Sia $f(x)=\sin x$, derivabile infinite volte, per $x=\dfrac\pi2$ quale delle seguenti affermazioni \`e vera?
+\begin{enumerate}
+\item $f^{(k)}(x)=1$ se $k=4n+1$, $n\in\mathbb N$
+\item $f^{(k)}(x)=1$ se $k=4n$, $n\in\mathbb Z$
+\item $f^{(k)}(x)=-1$ se $k=4n$, $n\in\mathbb N$
+\item $f^{(k)}(x)=1$ se $k=4n$, $n\in\mathbb N$
+\item $f^{(k)}(x)=-1$ se $k=4n+1$, $n\in\mathbb N$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Le derivate di $\sin x$ sono periodiche di periodo quattro: per $k=4n$, $f^{(k)}(\pi/2)=\sin(\pi/2)=1$. Anche B \`e formalmente vera se si ammettono ordini negativi, ma tali derivate non sono definite: D \`e la scelta pertinente.
+
+% Pag. originale 470/521
+\iffalse Pag. originale 470/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{n\to+\infty}\left(1+\frac4{n^2+4}\right)^n$
+\begin{enumerate}
+\item $4\sqrt e$
+\item $e^4$
+\item $1$
+\item $+\infty$
+\item $0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $n\log(1+4/(n^2+4))\sim4n/(n^2+4)\to0$, perci\`o il limite vale $e^0=1$.
+
+% Pag. originale 470/521
+\iffalse Pag. originale 470/521 \fi
+\begin{quiz}
+Sia $\displaystyle I=\int_0^4 e^{\sqrt{x}}\,dx$. Allora
+\begin{enumerate}
+\item $1<I<e^2$
+\item $I<0$
+\item $4<I<32$
+\item $I\ge32$
+\item $0<I<4$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: Per $0<x<4$ si ha $1<e^{\sqrt{x}}<e^2<8$; integrando $4<I<4e^2<32$.
+
+% Pag. originale 470/521
+\iffalse Pag. originale 470/521 \fi
+\begin{quiz}
+Sia $h(x)$ una funzione derivabile. Allora la derivata di $f(x)=\log(h^3(x)+1)$ vale
+\begin{enumerate}
+\item $f\prime(x)=\dfrac{3h^2(x)}{h^3(x)+1}$
+\item $f\prime(x)=\dfrac{3h^2(x)\cdot h\prime(x)}{(h^3(x)+1)^2}$
+\item $f\prime(x)=\dfrac{3h^2(x)+1}{h^3(x)+1}$
+\item $f\prime(x)=\dfrac1{h^3(x)+1}$
+\item $f\prime(x)=\dfrac{3h^2(x)\cdot h\prime(x)}{h^3(x)+1}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: La regola della catena applicata al logaritmo d\`a $f\prime=[3h^2h\prime]/(h^3+1)$, nei punti del dominio.
+
+% Pag. originale 470/521
+\iffalse Pag. originale 470/521 \fi
+\begin{quiz}
+Per quale valore del parametro $\alpha$ la funzione $\displaystyle f(x)=\begin{cases}\frac{\sin(\alpha x)}x,&x<0,\\[2pt]\frac{x+1}{x+2},&x\ge0\end{cases}$ \`e continua nel punto $x=0$?
+\begin{enumerate}
+\item $\alpha=\dfrac12$
+\item $\alpha=-2$
+\item $\alpha=-\dfrac12$
+\item $\alpha=2$
+\item $\alpha=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 3.1
+% SPIEGAZIONE: $\lim_{x\to0^-}\sin(\alpha x)/x=\alpha$, mentre $f(0)=1/2$. La continuit\`a richiede $\alpha=1/2$.
+
+Risposta completata

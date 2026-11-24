@@ -1,0 +1,15 @@
+PROGETTO QUIZ ANALISI 1 — ISTRUZIONI
+
+1) Estrai lo ZIP in una cartella e apri QUELLA cartella in VS Code (File > Apri cartella).
+2) Modifica i quiz nei file quiz_pagine_XXX_YYY.tex. Non rinominare i file.
+3) Premi Ctrl+Shift+B per compilare main.tex e soluzioni.tex in sequenza (Tectonic deve essere installato in C:\Tools\Tectonic\tectonic.exe).
+4) Per visualizzare il PDF, clicca su main.pdf o soluzioni.pdf nell'Explorer di VS Code, oppure apri main.tex e usa Ctrl+Shift+P > LaTeX Workshop: View LaTeX PDF.
+5) Le anteprime PDF normalmente si aggiornano da sole dopo la compilazione riuscita. Se non si aggiornano, chiudi e riapri la scheda.
+6) Ctrl+Alt+B in LaTeX Workshop compila SOLO il documento radice selezionato; Ctrl+Shift+B (attività di progetto) compila ENTRAMBI.
+
+I file dal secondo blocco in poi sono SEGNAPOSTO VUOTI, non quiz trascritti.
+Il primo blocco contiene 40 quiz da una precedente trascrizione NON ancora verificata integralmente rispetto al PDF originale.
+Il file risposte_generate.tex viene sovrascritto compilando main.tex: non modificarlo a mano.
+Le risposte sono registrate in fondo ai file quiz tramite \registraSoluzione{numero}{lettera}.
+La numerazione dei quiz è progressiva tramite il contatore dell'ambiente quiz.
+Il main.tex richiama già tutti e 53 i blocchi: NON occorre modificarlo quando si sostituisce un segnaposto.

@@ -1,0 +1,648 @@
+% !TeX root = main.tex
+% PAGINE ORIGINALI 511-520 — DA COMPILARE
+% Incollare qui i quiz del blocco e alla fine le rispettive\registraSoluzione{numero}{lettera}.
+% Questo file vuoto non aggiunge pagine al PDF.
+
+% !TeX root = main.tex
+% Pagine 511-520: tabella risposte simulazione 2; simulazioni 3 e 4 del giugno 2012.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Il dominio della funzione $f(x)=\sqrt{\log_{1/2}(x-1)+2}$ \`e:
+\begin{enumerate}
+\item $[5,+\infty)$
+\item $[1,5]$
+\item $(1,5]$
+\item $\mathbb R\setminus\{1\}$
+\item $(5,+\infty)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 1.4
+% SPIEGAZIONE: Serve $x>1$ e $\log_{1/2}(x-1)\ge-2$. Essendo la base minore di $1$, si ottiene $x-1\le4$, quindi $1<x\le5$.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Dati gli insiemi $A=\{z\in\mathbb C:|z-i|<1\}$ e $B=\{z\in\mathbb C:\operatorname{Re}(z+i)>5\}$, \`e vero che
+\begin{enumerate}
+\item $A\cup B$ \`e tutto il piano complesso
+\item $B\setminus A=A\setminus B$
+\item $A\cap B=\varnothing$
+\item $A\subseteq B$
+\item $A=B$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: In $A$ la parte reale \`e compresa tra $-1$ e $1$; in $B$ \`e maggiore di $5$. I due insiemi sono disgiunti.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to-\infty}\frac{e^{2x}+5x+\cos x}{\sin x-\log|x|-x}$
+\begin{enumerate}
+\item vale $0$
+\item vale $-\infty$
+\item vale $-5$
+\item vale $+\infty$
+\item non esiste
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Dividendo per $x$, numeratore e denominatore tendono rispettivamente a $5$ e $-1$; il rapporto tende a $-5$.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ tale che $\lim_{x\to-\infty}f(x)=-5$. Allora si pu\`o concludere che
+\begin{enumerate}
+\item $f$ \`e una funzione limitata
+\item $\exists M>0$ tale che $f(( -\infty,-M))$ \`e un insieme limitato
+\item $\inf_{\mathbb R}f=-5$
+\item $f(x)<0$ per ogni $x\in\operatorname{dom}f$
+\item $\forall M>0$, $f((-\infty,-M))$ \`e un insieme limitato
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: La definizione di limite finito all'infinito implica che, scegliendo $M$ sufficientemente grande, i valori $f(x)$ per $x<-M$ appartengono a un intervallo limitato intorno a $-5$.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Sia $f(x)=\begin{cases}\dfrac{1-\cosh x}{2x^2}&\text{se }x\ne0,\\5&\text{se }x=0.\end{cases}$ Allora il limite $\lim_{x\to0}f(x)$
+\begin{enumerate}
+\item vale $\frac12$
+\item vale $0$
+\item vale $5$
+\item non esiste
+\item vale $-\frac14$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $\cosh x=1+x^2/2+o(x^2)$, perci\`o $(1-\cosh x)/(2x^2)\to-1/4$. Il valore assegnato in $0$ non conta.
+
+% Pag. originale 512/521
+\iffalse Pag. originale 512/521 \fi
+\begin{quiz}
+Il limite della successione $a_n=\left(\dfrac{n+1}{n-1}\right)^n$ vale
+\begin{enumerate}
+\item $1$
+\item $e$
+\item $e^{-1}$
+\item $e^2$
+\item $+\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $a_n=(1+2/(n-1))^n\to e^2$.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+Se $a_n$ \`e una successione monotona, allora per $n\to\infty$
+\begin{enumerate}
+\item $a_n$ \`e convergente
+\item $a_n$ non \`e indeterminata
+\item $a_n$ \`e indeterminata
+\item $a_n$ \`e divergente
+\item $a_n$ non \`e convergente, n'e divergente
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Ogni successione monotona ha limite nell'insieme dei reali estesi: pu\`o convergere oppure divergere a $\pm\infty$, ma non oscillare senza limite.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+La derivata prima della funzione $f(x)=\log\!\left(\dfrac{\sqrt{1+x^2}}{x}\right)-\dfrac{1}{2x^2}$ \`e
+\begin{enumerate}
+\item $f'(x)=\dfrac{1}{x^3(x^2+1)}$
+\item $f'(x)=\dfrac{1}{x^2(x^2+1)}$
+\item $f'(x)=-\dfrac{1}{x^3(x^2+1)}$
+\item $f'(x)=-\dfrac{1}{x^3(x^2-1)}$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Per $x>0$, $f=\frac12\log(1+x^2)-\log x-1/(2x^2)$. Quindi $f'=x/(1+x^2)-1/x+1/x^3=1/[x^3(1+x^2)]$.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+Nell'intervallo $[-1,3]$ la funzione $f(x)=x^3+2x-3$
+\begin{enumerate}
+\item soddisfa le ipotesi del teorema di Rolle
+\item non soddisfa le ipotesi del teorema di Lagrange
+\item ha un unico punto di Lagrange $c=\sqrt{7/3}$
+\item ha due punti di Lagrange $c_1=\sqrt{7/3}$ e $c_2=-\sqrt{7/3}$
+\item nessuna delle altre risposte \`e corretta
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Il coefficiente della secante \`e $(f(3)-f(-1))/4=9$; $f'(c)=3c^2+2=9$ d\`a $c=\pm\sqrt{7/3}$, ma solo quello positivo appartiene a $(-1,3)$.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+Sull'intervallo $[-2,4]$ la funzione $f(x)=\sqrt[3]{x^2}$
+\begin{enumerate}
+\item non ha massimo assoluto
+\item non ha minimo assoluto
+\item ha un punto di massimo assoluto
+\item ha un punto di minimo relativo non assoluto
+\item ha un punto di flesso a tangente verticale
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: La funzione $|x|^{2/3}$ \`e continua sul compatto, ha minimo assoluto $0$ in $x=0$ e massimo assoluto in $x=4$.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+Il valore del parametro $a$ per cui la funzione $f(x)=x^{2a}\log(1+2x^a)$ risulta un infinitesimo di ordine $5$ per $x\to0$ \`e
+\begin{enumerate}
+\item $3$
+\item $5/3$
+\item $5$
+\item $5/2$
+\item $-5/3$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: Per $a>0$, $\log(1+2x^a)\sim2x^a$, quindi $f(x)\sim2x^{3a}$: $3a=5$ implica $a=5/3$.
+
+% Pag. originale 513/521
+\iffalse Pag. originale 513/521 \fi
+\begin{quiz}
+Quale delle seguenti affermazioni \`e soddisfatta dalla funzione $f(x)=(x+2)\sqrt{x}$?
+\begin{enumerate}
+\item $\lim_{x\to0^+}f'(x)=0$
+\item $f(x)$ \`e infinita di ordine $1/2$ per $x\to+\infty$
+\item $f(x)$ \`e continua e derivabile nel suo dominio
+\item $f(x)$ \`e infinitesima di ordine $3/2$ per $x\to0$
+\item $f(x)$ ha un punto a tangente verticale in $x=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: $f(x)\sim2\sqrt{x}$ e $f'(x)=\sqrt{x}+(x+2)/(2\sqrt{x})\to+\infty$ per $x\to0^+$: tangente verticale.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+Siano $f:\mathbb R\to\mathbb R$ di classe $C^2$ e $x_0\in\mathbb R$. Affinch'e $x_0$ sia punto di massimo per $f$, la condizione $f'(x_0)=0$ e $f''(x_0)<0$ \`e:
+\begin{enumerate}
+\item sufficiente ma non necessaria
+\item necessaria e sufficiente
+\item necessaria ma non sufficiente
+\item n'e necessaria, n'e sufficiente
+\item necessaria se esiste anche $f'''(x_0)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: Il test della derivata seconda \`e sufficiente per un massimo locale stretto; non \`e necessario, come mostra $f(x)=-x^4$ in $0$.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+La parte principale della funzione $f(x)=e^{1-\cos x}-x\sin(2x)-1$ per $x\to0$ \`e
+\begin{enumerate}
+\item $\frac83x^4$
+\item $-\frac32x^2$
+\item $6x^2$
+\item $\frac83x^4+o(x^4)$
+\item $6x^2+o(x^2)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $e^{1-\cos x}-1=x^2/2+O(x^4)$ e $x\sin(2x)=2x^2+O(x^4)$: $f(x)\sim-3x^2/2$.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+Lo sviluppo di Mac Laurin di $f(x)=\sqrt{1+x}$ di ordine $3$ \`e
+\begin{enumerate}
+\item $f(x)=1+\frac12x-\frac18x^2+\frac1{16}x^3$
+\item $f(x)=\frac1{16}x^3+o(x^3)$
+\item $f(x)=1+\frac12x+\frac12x^2+\frac12x^3+o(x^3)$
+\item $f(x)=1+\frac12x-\frac18x^2+o(x^3)$
+\item $f(x)=1+\frac12x-\frac18x^2+\frac1{16}x^3+o(x^3)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Per il binomio generalizzato $(1+x)^{1/2}=1+x/2-x^2/8+x^3/16+o(x^3)$. L'item A riporta il solo polinomio senza resto.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+Se $f$ ha sviluppo di Mac Laurin $f(x)=1-7x^3+o(x^4)$, allora NON \`e vero che
+\begin{enumerate}
+\item $f(x)$ ha un flesso in $x=0$
+\item $f'(x)$ ha un massimo in $x=0$
+\item $f''(x)$ \`e crescente nell'intorno di $x=0$
+\item $f'''(0)=-42$
+\item $f^{(4)}(0)=0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: La risposta ufficiale \`e C: il termine cubico implica un andamento della derivata seconda come $-42x$, quindi decrescente, se \`e lecito derivare il resto. Nota: dal solo resto $o(x^4)$ non segue in generale la monotonia locale di $f''$; il quesito sottintende regolarit\`a aggiuntiva.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+Il valore dell'integrale $\displaystyle\int_0^4\frac{1}{1+\sqrt{x}}\,dx$ \`e
+\begin{enumerate}
+\item $0$
+\item $2-4\log3$
+\item $3$
+\item $4-2\log3$
+\item $4-2\log3+c$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: Con $t=\sqrt{x}$, $dx=2t\,dt$, dunque $\int_0^2 2t/(1+t)\,dt=[2t-2\log(1+t)]_0^2=4-2\log3$.
+
+% Pag. originale 514/521
+\iffalse Pag. originale 514/521 \fi
+\begin{quiz}
+Supponendo che il teorema di integrazione per sostituzione sia applicabile, tramite la sostituzione $x=g(t)$ si ottiene
+\begin{enumerate}
+\item $\int f(x)\,dx=\int f(g^{-1}(x))\,dx$
+\item $\int f(x)\,dx=\int f(g(t))\,dt$
+\item $\int f(x)\,dx=\int f(g(t))g'(t)\,dt$
+\item $\int f(x)\,dx=\int f(t)g'(t)\,dt$
+\item $\int f(x)\,dx=\int f(g(t))g'(t)\,dx$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: Da $x=g(t)$ segue $dx=g'(t)\,dt$, quindi l'integrando trasformato \`e $f(g(t))g'(t)$.
+
+% Pag. originale 515/521
+\iffalse Pag. originale 515/521 \fi
+\begin{quiz}
+L'integrale improprio $\displaystyle\int_0^{+\infty}\frac{\arctan x}{x^\alpha}\,dx$
+\begin{enumerate}
+\item converge $\forall\alpha\in\mathbb R$
+\item converge $\forall\alpha<1$
+\item converge $\forall\alpha\in(1,2)$
+\item converge $\forall\alpha>1$
+\item diverge $\forall\alpha\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 5.5
+% SPIEGAZIONE: Per $x\to0^+$, $\arctan x\sim x$, quindi serve $\alpha<2$; per $x\to+\infty$, $\arctan x\to\pi/2$, quindi serve $\alpha>1$.
+
+% Pag. originale 515/521
+\iffalse Pag. originale 515/521 \fi
+\begin{quiz}
+L'equazione differenziale $y''+y'=0$
+\begin{enumerate}
+\item ha infinite soluzioni costanti
+\item ha una ed una sola soluzione costante
+\item non ha soluzioni costanti
+\item ha $y(x)=e^x$ come integrale particolare
+\item ha $y(x;c_1,c_2)=c_1e^{-x}+c_2e^x$ come integrale generale
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: L'equazione caratteristica \`e $r(r+1)=0$; la soluzione generale \`e $y=C_1+C_2e^{-x}$, con infinite soluzioni costanti scegliendo $C_2=0$.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+Siano $A,B\subset\mathbb R$. Se $A\subset B$, allora
+\begin{enumerate}
+\item $\inf A>\inf B$
+\item $\inf A\le\inf B$
+\item $\inf A<\inf B$
+\item $\inf A=\inf B$
+\item $\inf A\ge\inf B$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 1.2
+% SPIEGAZIONE: Il sottoinsieme $A$ non pu\`o contenere valori inferiori all'estremo inferiore di $B$: $\inf A\ge\inf B$, quando gli estremi sono definiti.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+La funzione $f(x)=\cos x+e^x$
+\begin{enumerate}
+\item \`e pari
+\item ha infiniti zeri
+\item \`e iniettiva su $\mathbb R$
+\item \`e monotona su $\mathbb R$
+\item \`e periodica
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.4
+% SPIEGAZIONE: Per $x\to-\infty$, $e^x\to0$ e $\cos x$ oscilla fra $-1$ e $1$: per continuit\`a si trovano infiniti zeri distinti. Non \`e monotona n'e periodica.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+Un polinomio a coefficienti reali che ha tra le proprie radici i numeri $0$ e $2+i$
+\begin{enumerate}
+\item ha grado $2$
+\item ha grado maggiore o uguale a $3$
+\item ha grado strettamente minore di $3$
+\item ha grado $4$
+\item ha grado pari
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.5
+% SPIEGAZIONE: Per coefficienti reali anche $2-i$ \`e radice. Le radici distinte $0$, $2+i$, $2-i$ impongono grado almeno $3$.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione tale che $\lim_{x\to2}f(x)=1$. Allora
+\begin{enumerate}
+\item $f(2)=1$
+\item $\forall\delta>0$, se $|x-2|<\delta$ allora $f(x)>0$
+\item $\exists\delta>0$ tale che se $|x-2|<\delta$ allora $|f(x)-1|<\delta$
+\item $\forall\delta>0$, se $0<|x-2|<\delta$ allora $1<f(x)<2$
+\item $\exists\delta>0$ tale che se $0<|x-2|<\delta$ allora $f(x)>0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: E
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Poich'e il limite \`e $1>0$, esiste un intorno bucato di $2$ in cui $f(x)>0$. Nessuna condizione \`e imposta al valore $f(2)$.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to0}\frac{9^x-1}{\sqrt[4]{1+8x}-1}$ vale
+\begin{enumerate}
+\item $3$
+\item $2$
+\item $\log3$
+\item $\log2$
+\item $9/8$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $9^x-1\sim x\log9$ e $(1+8x)^{1/4}-1\sim2x$: il rapporto tende a $\log9/2=\log3$.
+
+% Pag. originale 517/521
+\iffalse Pag. originale 517/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to+\infty}(3x+2)\sin^2x$
+\begin{enumerate}
+\item vale $+\infty$
+\item vale $3$
+\item non esiste
+\item vale $2$
+\item vale $0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Lungo $x=k\pi$ il prodotto \`e $0$, mentre lungo $x=\pi/2+k\pi$ tende a $+\infty$. Il limite non esiste.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Se le funzioni $f,g:\mathbb R\to\mathbb R$ hanno rispettivamente le rette $y=x+1$, $y=2x$ come asintoti a $+\infty$, allora
+\begin{enumerate}
+\item $\lim_{x\to+\infty}(f(x)-g(x))=-1$
+\item $\lim_{x\to+\infty}(f(x)-g(x))=-\infty$
+\item $\lim_{x\to+\infty}\frac{f(x)-g(x)}{x}=0$
+\item $\lim_{x\to+\infty}\frac{f(x)-g(x)}{x}=+\infty$
+\item $\lim_{x\to+\infty}(f(x)+g(x))=-\infty$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: $f(x)=x+1+o(1)$ e $g(x)=2x+o(1)$; pertanto $f-g=-x+1+o(1)\to-\infty$.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Sia $a_n=\dfrac{3n+(-1)^n}{n+(-2)^n}$. Allora
+\begin{enumerate}
+\item $\lim_{n\to\infty}a_n=0$
+\item $a_n$ non ha limite per $n\to\infty$
+\item $\lim_{n\to\infty}a_n=3$
+\item $\lim_{n\to\infty}a_n=+\infty$
+\item $a_n$ \`e monotona
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 2.2
+% SPIEGAZIONE: Poich'e $|(-2)^n|=2^n$ domina $n$ e il numeratore \`e $O(n)$, si ha $a_n\to0$ da entrambi i sottogruppi.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Sia $f(x)=2^{x\sin x}$. Allora
+\begin{enumerate}
+\item $f'(x)=2^{x\sin x}(\sin x+x\cos x)$
+\item $f'(x)=2^{x\sin x}$
+\item $f'(x)=2^{x\sin x}x\cos x$
+\item $f'(x)=2^{x\sin x}(\sin x+x\cos x)\log2$
+\item $f'(x)=2^{x\sin x}\log2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Derivando $a^{u(x)}$ si ottiene $a^{u(x)}\log a\,u'(x)$, con $u'=\sin x+x\cos x$.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Se $f(x_0)=0$ ed $x_0$ \`e un punto angoloso per $f$, allora $g(x)=(x-x_0)f(x)$
+\begin{enumerate}
+\item \`e derivabile in $x_0$
+\item ha un punto di cuspide in $x_0$
+\item ha un punto angoloso in $x_0$
+\item non \`e derivabile in $x_0$
+\item \`e discontinua in $x_0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: Il rapporto incrementale di $g$ in $x_0$ \`e $f(x)$, che tende a $f(x_0)=0$ perch'e un punto angoloso implica continuit\`a. Quindi $g'(x_0)=0$.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione derivabile ed invertibile. Se $f(2)=1$ e $f'(2)=3$ allora
+\begin{enumerate}
+\item $(f^{-1})'(2)=3$
+\item $(f^{-1})'(3)=1$
+\item $(f^{-1})'(1)=1/3$
+\item $(f^{-1})'(1)=1/2$
+\item $(f^{-1})'(3)=2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.1
+% SPIEGAZIONE: La formula per la derivata dell'inversa d\`a $(f^{-1})'(f(2))=1/f'(2)=1/3$.
+
+% Pag. originale 518/521
+\iffalse Pag. originale 518/521 \fi
+\begin{quiz}
+Sia $f:[0,4]\to\mathbb R$ definita da $f(x)=\sqrt{x}$ se $x\ne1$, e $f(x)=\alpha$ se $x=1$, con $\alpha$ parametro reale. Allora $f$ assume tutti i valori compresi tra $0$ e $2$ se e solo se
+\begin{enumerate}
+\item $\alpha=0$
+\item $\alpha=1$
+\item $\alpha=2$
+\item $0\le\alpha\le4$
+\item $0\le\alpha\le2$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: B
+% SEZIONE_AM1: 1.4
+% SPIEGAZIONE: Il valore $1$ \`e assunto da $\sqrt{x}$ soltanto in $x=1$, dove la funzione vale invece $\alpha$. Per coprire $[0,2]$ occorre e basta $\alpha=1$.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ continua su $\mathbb R$ e decrescente in $(-\infty,0)$ e in $(0,+\infty)$. Allora
+\begin{enumerate}
+\item $f(\mathbb R)$ non \`e un intervallo
+\item $f(\mathbb R)=\mathbb R$
+\item $f$ \`e decrescente su tutto $\mathbb R$
+\item $\sup_{\mathbb R}f=+\infty$
+\item $f$ \`e limitata su $\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.3
+% SPIEGAZIONE: La continuit\`a in $0$ permette di raccordare i due tratti decrescenti senza salti: per $x<0<y$, $f(x)\ge f(0)\ge f(y)$.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Sia $f:\mathbb R\to\mathbb R$ una funzione derivabile tale che $f(-1)=0$ e $f(6)=3$. Allora nell'intervallo $(-1,6)$ la derivata $f'(x)$
+\begin{enumerate}
+\item assume il valore $7/3$ in almeno un punto
+\item si annulla in almeno un punto
+\item assume il valore $7/3$ in infiniti punti
+\item assume il valore $3/7$ in almeno un punto
+\item non \`e mai nulla
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: Il teorema di Lagrange garantisce $f'(c)=[f(6)-f(-1)]/[6-(-1)]=3/7$ per almeno un $c\in(-1,6)$.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Per $x\to0$ si ha
+\begin{enumerate}
+\item $\dfrac1{x^4+x^2}\sim\dfrac1{x^4}$
+\item $\dfrac1{x^4}+\dfrac1{x^2}\sim\dfrac1{x^2}$
+\item $\dfrac1{x^4}-\dfrac1{x^2}\sim-\dfrac1{x^2}$
+\item $x^4+x^2\sim x^2$
+\item $\dfrac1{x^4-x^2}\sim\dfrac1{x^4}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $x^4+x^2=x^2(1+x^2)$ e il rapporto con $x^2$ tende a $1$.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Il limite $\displaystyle\lim_{x\to0}\frac{e^{\sqrt[3]{8x}}-2\sqrt[3]{x}-1}{\sin\sqrt[7]{x}}$ vale
+\begin{enumerate}
+\item $1$
+\item $+\infty$
+\item $0$
+\item $-1$
+\item $e$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 3.4
+% SPIEGAZIONE: $\sqrt[3]{8x}=2\sqrt[3]{x}$; lo sviluppo dell'esponenziale cancella il termine lineare, lasciando $O(|x|^{2/3})$. Il denominatore \`e asintotico a $\sqrt[7]{x}$, dunque il rapporto tende a $0$.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Lo sviluppo di Mac Laurin di ordine $3$ di $f(x)=\dfrac{2x}{1+x}-\dfrac1{x-1}$ \`e
+\begin{enumerate}
+\item $f(x)=1-3x-x^2+3x^3+o(x^3)$
+\item $f(x)=1+3x-x^2-3x^3+o(x^3)$
+\item $f(x)=1+3x-x^2+3x^3+o(x^3)$
+\item $f(x)=1-3x-x^2-3x^3+o(x^3)$
+\item $f(x)=1+3x+x^2+3x^3+o(x^3)$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 4.2
+% SPIEGAZIONE: $2x/(1+x)=2x-2x^2+2x^3+o(x^3)$ e $-1/(x-1)=1+x+x^2+x^3+o(x^3)$; sommando si ottiene C.
+
+% Pag. originale 519/521
+\iffalse Pag. originale 519/521 \fi
+\begin{quiz}
+Sia $F(x)$ la primitiva di $f(x)=\dfrac{e^{\sqrt{x+2}}}{\sqrt{x+2}}$ che si annulla in $x=-1$. Allora
+\begin{enumerate}
+\item $F(x)=2\sqrt{x+2}e^{\sqrt{x+2}}-2e$
+\item $F(x)=\sqrt{x+2}e^{\sqrt{x+2}}-e$
+\item $F(x)=e^{\sqrt{x+2}}-e$
+\item $F(x)=2e^{\sqrt{x+2}}-2e$
+\item $F(x)=2e^{\sqrt{x+2}}$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: D
+% SEZIONE_AM1: 5.4
+% SPIEGAZIONE: Con $t=\sqrt{x+2}$, $dx=2t\,dt$, e $\int e^t/t\,2t\,dt=2e^t+C$. Da $F(-1)=0$ segue $C=-2e$.
+
+% Pag. originale 520/521
+\iffalse Pag. originale 520/521 \fi
+\begin{quiz}
+L'integrale improprio $\displaystyle\int_0^{+\infty}\frac{\sqrt{x}}{x+x^2}\,dx$
+\begin{enumerate}
+\item converge
+\item diverge positivamente
+\item diverge negativamente
+\item \`e indeterminato
+\item vale $0$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: A
+% SEZIONE_AM1: 5.5
+% SPIEGAZIONE: L'integranda \`e $1/[\sqrt{x}(1+x)]$: vicino a $0$ \`e dell'ordine di $x^{-1/2}$, all'infinito di $x^{-3/2}$; entrambi gli integrali convergono.
+
+% Pag. originale 520/521
+\iffalse Pag. originale 520/521 \fi
+\begin{quiz}
+L'equazione differenziale $x''-5x'+6x=e^{2t}$ ha una soluzione particolare $x_p(t)$ della forma
+\begin{enumerate}
+\item $x_p(t)=Cte^{3t}$ con $C\in\mathbb R$
+\item $x_p(t)=Ct^2e^{3t}$ con $C\in\mathbb R$
+\item $x_p(t)=Cte^{2t}$ con $C\in\mathbb R$
+\item $x_p(t)=Ct^2e^{2t}$ con $C\in\mathbb R$
+\item $x_p(t)=C$ con $C\in\mathbb R$
+\end{enumerate}
+\end{quiz}
+% SOLUZIONE: C
+% SEZIONE_AM1: 6.1
+% SPIEGAZIONE: L'equazione caratteristica \`e $(r-2)(r-3)=0$: il forzamento $e^{2t}$ \`e risonante con una radice semplice, quindi si cerca $x_p=Cte^{2t}$; $C=-1$.
+Risposta completata
